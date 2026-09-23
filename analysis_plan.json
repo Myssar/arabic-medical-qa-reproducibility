@@ -1,0 +1,7 @@
+{
+  "analysis": "post hoc fixed-fold refitting bootstrap",
+  "replicates": 2000,
+  "seed": 20260916,
+  "procedure": "Resample question identities within each original fold. Carry one multiplicity weight per identity into every fold-specific training fit and held-out evaluation. All copies of a question remain in its original fold. Refit base rate, isotonic and logistic in every replicate. No test item appears in its calibration training folds.",
+  "scope": "Accounts for empirical sampling and calibrator refitting, conditional on frozen fold allocation, retained outputs and serving configurations. Does not model source-cluster dependence or new model generation. No multiplicity adjustment."
+}

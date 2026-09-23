@@ -1,0 +1,22 @@
+model_A,model_B,n_common,both_correct,A_only,B_only,both_wrong,statistic,test,p_raw,p_bonferroni
+groq/llama-3.1-8b-instant,groq/llama-3.3-70b-versatile,1999,563,218,540,678,135.93799472295515,continuity-corrected chi-square,2.0585957250097385e-31,4.323051022520451e-30
+groq/llama-3.1-8b-instant,groq/openai/gpt-oss-120b,2000,567,214,649,570,218.25724217844729,continuity-corrected chi-square,2.1703523094844377e-49,4.557739849917319e-48
+groq/llama-3.1-8b-instant,groq/openai/gpt-oss-20b,2000,532,249,515,704,91.91753926701571,continuity-corrected chi-square,9.03645502854173e-22,1.8976555559937632e-20
+groq/llama-3.1-8b-instant,openrouter/anthropic/claude-sonnet-5,1998,645,136,848,369,513.7408536585366,continuity-corrected chi-square,9.734592843494808e-114,2.04426449713391e-112
+groq/llama-3.1-8b-instant,openrouter/google/gemini-3.6-flash,2000,676,105,921,298,647.3927875243664,continuity-corrected chi-square,8.243853114380832e-143,1.7312091540199746e-141
+groq/llama-3.1-8b-instant,openrouter/openai/gpt-5.6-terra,1996,670,109,899,318,617.5803571428571,continuity-corrected chi-square,2.512015470043848e-136,5.2752324870920806e-135
+groq/llama-3.3-70b-versatile,groq/openai/gpt-oss-120b,1999,874,229,341,555,21.61578947368421,continuity-corrected chi-square,3.330983777852753e-06,6.99506593349078e-05
+groq/llama-3.3-70b-versatile,groq/openai/gpt-oss-20b,1999,782,321,265,631,5.162116040955631,continuity-corrected chi-square,0.023084755308159458,0.4847798614713486
+groq/llama-3.3-70b-versatile,openrouter/anthropic/claude-sonnet-5,1997,989,113,504,391,246.515397082658,continuity-corrected chi-square,1.4932602104807908e-55,3.135846442009661e-54
+groq/llama-3.3-70b-versatile,openrouter/google/gemini-3.6-flash,1999,1021,82,576,320,369.3753799392097,continuity-corrected chi-square,2.5597264698872755e-82,5.375425586763278e-81
+groq/llama-3.3-70b-versatile,openrouter/openai/gpt-5.6-terra,1995,1009,94,560,332,330.6192660550459,continuity-corrected chi-square,7.045482851951696e-74,1.479551398909856e-72
+groq/openai/gpt-oss-120b,groq/openai/gpt-oss-20b,2000,892,324,155,629,58.92275574112735,continuity-corrected chi-square,1.6398473514078525e-14,3.44367943795649e-13
+groq/openai/gpt-oss-120b,openrouter/anthropic/claude-sonnet-5,1998,1099,117,394,388,149.07240704500978,continuity-corrected chi-square,2.765117169654492e-34,5.806746056274433e-33
+groq/openai/gpt-oss-120b,openrouter/google/gemini-3.6-flash,2000,1145,71,452,332,276.0994263862333,continuity-corrected chi-square,5.316424757356763e-62,1.1164491990449203e-60
+groq/openai/gpt-oss-120b,openrouter/openai/gpt-5.6-terra,1996,1133,81,436,346,242.3907156673114,continuity-corrected chi-square,1.1842225678223877e-54,2.4868673924270143e-53
+groq/openai/gpt-oss-20b,openrouter/anthropic/claude-sonnet-5,1998,951,96,542,409,310.38401253918494,continuity-corrected chi-square,1.8012347202598354e-69,3.782592912545654e-68
+groq/openai/gpt-oss-20b,openrouter/google/gemini-3.6-flash,2000,986,61,611,342,448.51339285714283,continuity-corrected chi-square,1.5193002381503666e-99,3.19053050011577e-98
+groq/openai/gpt-oss-20b,openrouter/openai/gpt-5.6-terra,1996,979,66,590,361,416.9649390243902,continuity-corrected chi-square,1.1170402461053077e-92,2.3457845168211462e-91
+openrouter/anthropic/claude-sonnet-5,openrouter/google/gemini-3.6-flash,1998,1433,60,163,342,46.65470852017937,continuity-corrected chi-square,8.466331044538588e-12,1.7779295193531035e-10
+openrouter/anthropic/claude-sonnet-5,openrouter/openai/gpt-5.6-terra,1994,1412,80,156,346,23.834745762711865,continuity-corrected chi-square,1.04970433889779e-06,2.204379111685359e-05
+openrouter/google/gemini-3.6-flash,openrouter/openai/gpt-5.6-terra,1996,1522,73,47,354,5.208333333333333,continuity-corrected chi-square,0.022478873366125276,0.4720563406886308

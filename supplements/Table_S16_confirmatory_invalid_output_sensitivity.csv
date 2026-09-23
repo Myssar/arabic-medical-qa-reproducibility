@@ -1,0 +1,21 @@
+model,prompt_id,order_id,planned_n,valid_n,invalid_n,invalid_rate,complete_case_accuracy,operational_accuracy_invalid_as_failure,accuracy_lower_bound,accuracy_upper_bound
+Claude Sonnet 5,P0_original,O0_original,500,500,0,0.0,0.732,0.732,0.732,0.732
+Claude Sonnet 5,P0_original,O1_permuted,500,500,0,0.0,0.714,0.714,0.714,0.714
+Claude Sonnet 5,P1_probability,O0_original,500,500,0,0.0,0.704,0.704,0.704,0.704
+Claude Sonnet 5,P1_probability,O1_permuted,500,500,0,0.0,0.68,0.68,0.68,0.68
+GPT-5.6 Terra,P0_original,O0_original,500,496,4,0.008,0.7762096774193549,0.77,0.77,0.778
+GPT-5.6 Terra,P0_original,O1_permuted,500,498,2,0.004,0.7248995983935743,0.722,0.722,0.726
+GPT-5.6 Terra,P1_probability,O0_original,500,496,4,0.008,0.7762096774193549,0.77,0.77,0.778
+GPT-5.6 Terra,P1_probability,O1_permuted,500,491,9,0.018,0.7433808553971487,0.73,0.73,0.748
+GPT-OSS-120B,P0_original,O0_original,500,500,0,0.0,0.552,0.552,0.552,0.552
+GPT-OSS-120B,P0_original,O1_permuted,500,500,0,0.0,0.544,0.544,0.544,0.544
+GPT-OSS-120B,P1_probability,O0_original,500,500,0,0.0,0.562,0.562,0.562,0.562
+GPT-OSS-120B,P1_probability,O1_permuted,500,500,0,0.0,0.56,0.56,0.56,0.56
+GPT-OSS-20B,P0_original,O0_original,500,500,0,0.0,0.482,0.482,0.482,0.482
+GPT-OSS-20B,P0_original,O1_permuted,500,500,0,0.0,0.468,0.468,0.468,0.468
+GPT-OSS-20B,P1_probability,O0_original,500,500,0,0.0,0.494,0.494,0.494,0.494
+GPT-OSS-20B,P1_probability,O1_permuted,500,500,0,0.0,0.474,0.474,0.474,0.474
+Gemini 3.6 Flash,P0_original,O0_original,500,496,4,0.008,0.782258064516129,0.776,0.776,0.784
+Gemini 3.6 Flash,P0_original,O1_permuted,500,494,6,0.012,0.7469635627530364,0.738,0.738,0.75
+Gemini 3.6 Flash,P1_probability,O0_original,500,495,5,0.01,0.7797979797979798,0.772,0.772,0.782
+Gemini 3.6 Flash,P1_probability,O1_permuted,500,493,7,0.014,0.7626774847870182,0.752,0.752,0.766

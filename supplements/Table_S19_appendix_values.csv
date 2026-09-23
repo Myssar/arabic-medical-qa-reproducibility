@@ -1,0 +1,7 @@
+Scenario,Excluded,Retained planned
+Original frozen analysis,0,500
+Changed letter references,36,464
+Exact baseline duplicates,6,494
+References and duplicates,42,458
+Expanded quality screen,127,373
+Expanded screen and duplicates,132,368

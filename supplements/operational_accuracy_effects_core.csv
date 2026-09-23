@@ -1,0 +1,16 @@
+model,effect,metric,n_items,invalid_cells,estimate,ci_low,ci_high,p_bootstrap,worst_case_effect_bound,best_case_effect_bound,p_holm
+Claude Sonnet 5,prompt,operational_accuracy_invalid_as_failure,500,0,-0.031,-0.051,-0.013,0.001999000499750125,-0.031,-0.031,0.009995002498750623
+Claude Sonnet 5,order,operational_accuracy_invalid_as_failure,500,0,-0.021,-0.046024999999999996,0.006,0.127936031984008,-0.021,-0.021,0.383808095952024
+Claude Sonnet 5,interaction,operational_accuracy_invalid_as_failure,500,0,-0.006,-0.044,0.034,0.8215892053973014,-0.006,-0.006,1.0
+GPT-5.6 Terra,prompt,operational_accuracy_invalid_as_failure,500,19,0.004,-0.009,0.018,0.638680659670165,-0.002,0.017,1.0
+GPT-5.6 Terra,order,operational_accuracy_invalid_as_failure,500,19,-0.044,-0.066,-0.025,0.0009995002498750624,-0.052,-0.033,0.004997501249375312
+GPT-5.6 Terra,interaction,operational_accuracy_invalid_as_failure,500,19,0.008,-0.018,0.032,0.6026986506746627,-0.004,0.034,1.0
+GPT-OSS-120B,prompt,operational_accuracy_invalid_as_failure,500,0,0.013,-0.012,0.038,0.32283858070964516,0.013,0.013,1.0
+GPT-OSS-120B,order,operational_accuracy_invalid_as_failure,500,0,-0.005,-0.038,0.028,0.8045977011494253,-0.005,-0.005,0.8045977011494253
+GPT-OSS-120B,interaction,operational_accuracy_invalid_as_failure,500,0,0.006,-0.046,0.06,0.8575712143928036,0.006,0.006,1.0
+GPT-OSS-20B,prompt,operational_accuracy_invalid_as_failure,500,0,0.009,-0.019,0.038,0.5797101449275363,0.009,0.009,1.0
+GPT-OSS-20B,order,operational_accuracy_invalid_as_failure,500,0,-0.017,-0.051,0.018,0.36481759120439783,-0.017,-0.017,0.7296351824087957
+GPT-OSS-20B,interaction,operational_accuracy_invalid_as_failure,500,0,-0.006,-0.06,0.05004999999999973,0.8875562218890555,-0.006,-0.006,1.0
+Gemini 3.6 Flash,prompt,operational_accuracy_invalid_as_failure,500,22,0.005,-0.009,0.019,0.5237381309345327,-0.005,0.017,1.0
+Gemini 3.6 Flash,order,operational_accuracy_invalid_as_failure,500,22,-0.029,-0.051,-0.009,0.005997001499250375,-0.038,-0.016,0.0239880059970015
+Gemini 3.6 Flash,interaction,operational_accuracy_invalid_as_failure,500,22,0.018,-0.004,0.042,0.14292853573213393,-0.004,0.04,0.7146426786606697

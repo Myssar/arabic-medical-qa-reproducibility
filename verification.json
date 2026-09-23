@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "models": [
+    {
+      "model": "openrouter/google/gemini-3.6-flash",
+      "duplicate_vs_weighted_max_logistic_difference": 2.220446049250313e-16,
+      "interval_rows_verified": 15,
+      "fold_identity_leakage": false
+    },
+    {
+      "model": "openrouter/openai/gpt-5.6-terra",
+      "duplicate_vs_weighted_max_logistic_difference": 2.220446049250313e-16,
+      "interval_rows_verified": 15,
+      "fold_identity_leakage": false
+    },
+    {
+      "model": "openrouter/anthropic/claude-sonnet-5",
+      "duplicate_vs_weighted_max_logistic_difference": 2.220446049250313e-16,
+      "interval_rows_verified": 15,
+      "fold_identity_leakage": false
+    },
+    {
+      "model": "groq/openai/gpt-oss-120b",
+      "duplicate_vs_weighted_max_logistic_difference": 2.220446049250313e-16,
+      "interval_rows_verified": 15,
+      "fold_identity_leakage": false
+    },
+    {
+      "model": "groq/llama-3.3-70b-versatile",
+      "duplicate_vs_weighted_max_logistic_difference": 2.220446049250313e-16,
+      "interval_rows_verified": 15,
+      "fold_identity_leakage": false
+    },
+    {
+      "model": "groq/openai/gpt-oss-20b",
+      "duplicate_vs_weighted_max_logistic_difference": 4.440892098500626e-16,
+      "interval_rows_verified": 15,
+      "fold_identity_leakage": false
+    },
+    {
+      "model": "groq/llama-3.1-8b-instant",
+      "duplicate_vs_weighted_max_logistic_difference": 4.440892098500626e-16,
+      "interval_rows_verified": 15,
+      "fold_identity_leakage": false
+    }
+  ],
+  "supplement_count_checks": "passed",
+  "interval_rows_verified": 105
+}

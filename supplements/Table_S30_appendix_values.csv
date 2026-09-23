@@ -1,0 +1,12 @@
+Configuration,Contrast,Outcome,Estimate,95% clustered-bootstrap CI,Holm p
+Claude Sonnet 5,Prompt,Accuracy,-0.0310,-0.0510 to -0.0120,0.020
+GPT-OSS-120B,Prompt,ECE,-0.0459,-0.0694 to -0.0192,0.005
+GPT-OSS-120B,Prompt,Brier score (secondary),-0.0274,-0.0450 to -0.0101,0.010
+GPT-OSS-120B,Prompt,Log loss (secondary),-0.1236,-0.1749 to -0.0744,0.005
+GPT-OSS-20B,Prompt,Log loss (secondary),-0.0924,-0.1658 to -0.0258,0.024
+Gemini 3.6 Flash,Option order,Accuracy,-0.0299,-0.0515 to -0.0103,0.012
+Gemini 3.6 Flash,Option order,ECE,+0.0313,+0.0115 to +0.0520,0.005
+Gemini 3.6 Flash,Option order,Brier score (secondary),+0.0266,+0.0102 to +0.0438,0.012
+GPT-5.6 Terra,Option order,Accuracy,-0.0429,-0.0644 to -0.0225,0.005
+GPT-5.6 Terra,Option order,ECE,+0.0298,+0.0108 to +0.0524,0.020
+GPT-5.6 Terra,Option order,Brier score (secondary),+0.0281,+0.0135 to +0.0451,0.005
