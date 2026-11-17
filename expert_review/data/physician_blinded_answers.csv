@@ -1,0 +1,102 @@
+survey_id,item_id,source,model_shown,model_answer,model_confidence,benchmark_key,curriculum_level,medical_specialty,umbrella_specialty,physician_1,physician_2,physician_3,physician_4,physician_5
+B001,mab1319,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,C,Y2,Biochemistry,Biochemistry,B,B,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B002,mab725,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-20b,A,0.91,B,Y2,Histology,Anatomy,D,MULTIPLE,A,MULTIPLE,CANNOT_JUDGE
+B003,mab2131,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,C,Y1,Cell Biology,Cell and Molecular Biology,A,A,A,MULTIPLE,CANNOT_JUDGE
+B004,mab2984,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y3,Physics,Chemistry and Physics,C,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B005,mab1685,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y1,Genetics,Cell and Molecular Biology,D,D,D,D,C
+B006,mab1715,HIGH_CONFIDENCE_ERROR,openrouter/anthropic/claude-sonnet-5,A,0.972,C,Y1,Genetics,Cell and Molecular Biology,B,CANNOT_JUDGE,B,CANNOT_JUDGE,CANNOT_JUDGE
+B007,mab42,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,A,Y1,Anatomy,Anatomy,A,B,MULTIPLE,MULTIPLE,B
+B008,mab3894,HIGH_CONFIDENCE_ERROR,openrouter/openai/gpt-5.6-terra,A,0.93,D,Y2,Physiology,Physiology,D,MULTIPLE,A,CANNOT_JUDGE,A
+B009,mab2819,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,D,Y1,Physics,Chemistry and Physics,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B010,mab2082,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,C,Y1,Genetics,Cell and Molecular Biology,C,MULTIPLE,C,MULTIPLE,D
+B011,mab38,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-120b,D,0.924,C,Y1,Anatomy,Anatomy,D,MULTIPLE,D,MULTIPLE,D
+B012,mab2222,HIGH_CONFIDENCE_ERROR,openrouter/anthropic/claude-sonnet-5,A,0.9,B,Y1,Cell Biology,Cell and Molecular Biology,A,MULTIPLE,B,A,CANNOT_JUDGE
+B013,mab2098,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,D,Y1,Cell Biology,Cell and Molecular Biology,B,MULTIPLE,A,CANNOT_JUDGE,B
+B014,mab2107,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,D,Y1,Cell Biology,Cell and Molecular Biology,A,B,B,CANNOT_JUDGE,CANNOT_JUDGE
+B015,mab1915,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,D,Y1,Cell Biology,Cell and Molecular Biology,B,MULTIPLE,A,B,CANNOT_JUDGE
+B016,mab2926,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,A,Y1,Physics,Chemistry and Physics,A,B,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B017,mab2655,UNANIMOUS_DISAGREEMENT,all seven configurations,C,,D,Y3,Physics,Chemistry and Physics,A,B,C,C,C
+B018,mab2258,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,A,Y1,Genetics,Cell and Molecular Biology,D,NONE,MULTIPLE,B,B
+B019,mab4590,HIGH_CONFIDENCE_ERROR,openrouter/anthropic/claude-sonnet-5,C,0.94,D,Y1,Statistics,Statistics,C,CANNOT_JUDGE,C,C,CANNOT_JUDGE
+B020,mab1658,UNANIMOUS_DISAGREEMENT,all seven configurations,C,,B,Y1,Genetics,Cell and Molecular Biology,C,CANNOT_JUDGE,D,CANNOT_JUDGE,CANNOT_JUDGE
+B021,mab1730,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,A,Y1,Cell Biology,Cell and Molecular Biology,C,A,D,D,D
+B022,mab2478,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,B,Y3,Physics,Chemistry and Physics,A,D,MULTIPLE,CANNOT_JUDGE,CANNOT_JUDGE
+B023,mab4882,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-20b,B,0.9,A,Y4,Surgery,Surgery,E,A,B,E,B
+B024,mab1060,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,C,Y1,Anatomy,Anatomy,C,MULTIPLE,C,MULTIPLE,D
+B025,mab546,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,A,Y1,Anatomy,Anatomy,B,CANNOT_JUDGE,B,B,B
+B026,mab1361,HIGH_CONFIDENCE_ERROR,groq/llama-3.1-8b-instant,B,0.946,C,Y1,Biochemistry,Biochemistry,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B027,mab787,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y2,Histology,Anatomy,D,D,D,D,CANNOT_JUDGE
+B028,mab2397,HIGH_CONFIDENCE_ERROR,groq/llama-3.3-70b-versatile,B,0.9,D,Y3,Physics,Chemistry and Physics,CANNOT_JUDGE,B,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B029,mab327,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y2,Anatomy,Anatomy,C,D,D,D,C
+B030,mab4835,UNANIMOUS_DISAGREEMENT,all seven configurations,E,,B,Y4,Surgery,Surgery,E,MULTIPLE,MULTIPLE,NONE,CANNOT_JUDGE
+B031,mab4112,HIGH_CONFIDENCE_ERROR,groq/llama-3.3-70b-versatile,B,0.9,A,Y1,Physiology,Physiology,B,B,A,A,A
+B032,mab4826,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,C,Y1,Statistics,Statistics,C,B,CANNOT_JUDGE,B,B
+B033,mab378,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-20b,A,0.9,B,Y1,Anatomy,Anatomy,A,A,B,B,B
+B034,mab2366,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,C,Y1,Physics,Chemistry and Physics,D,D,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B035,mab2150,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,B,Y1,Genetics,Cell and Molecular Biology,A,A,A,CANNOT_JUDGE,A
+B036,mab1760,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,C,Y1,Genetics,Cell and Molecular Biology,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B037,mab2696,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,D,Y3,Physics,Chemistry and Physics,B,B,B,B,B
+B038,mab4032,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-20b,A,0.904,B,Y1,Physiology,Physiology,B,A,B,B,CANNOT_JUDGE
+B039,mab490,HIGH_CONFIDENCE_ERROR,groq/llama-3.1-8b-instant,A,0.936,C,Y1,Anatomy,Anatomy,A,MULTIPLE,C,C,C
+B040,mab1911,HIGH_CONFIDENCE_ERROR,openrouter/google/gemini-3.6-flash,C,0.95,D,Y1,Genetics,Cell and Molecular Biology,A,NONE,A,C,CANNOT_JUDGE
+B041,mab1869,HIGH_CONFIDENCE_ERROR,groq/llama-3.1-8b-instant,B,0.91,C,Y1,Genetics,Cell and Molecular Biology,B,CANNOT_JUDGE,A,CANNOT_JUDGE,A
+B042,mab171,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,C,Y2,Histology,Anatomy,E,D,D,D,D
+B043,mab2116,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,A,Y1,Genetics,Cell and Molecular Biology,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B044,mab4435,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,C,Y2,Physiology,Physiology,D,D,D,C,D
+B045,mab2017,UNANIMOUS_DISAGREEMENT,all seven configurations,C,,B,Y1,Genetics,Cell and Molecular Biology,C,A,C,C,C
+B046,mab1770,HIGH_CONFIDENCE_ERROR,openrouter/openai/gpt-5.6-terra,B,0.968,C,Y1,Cell Biology,Cell and Molecular Biology,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,B,CANNOT_JUDGE
+B047,mab1798,HIGH_CONFIDENCE_ERROR,openrouter/anthropic/claude-sonnet-5,B,0.9,C,Y1,Genetics,Cell and Molecular Biology,D,D,MULTIPLE,B,CANNOT_JUDGE
+B048,mab1694,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-120b,B,0.95,C,Y1,Cell Biology,Cell and Molecular Biology,C,B,C,B,CANNOT_JUDGE
+B049,mab555,HIGH_CONFIDENCE_ERROR,groq/llama-3.1-8b-instant,B,0.9,C,Y1,Anatomy,Anatomy,B,CANNOT_JUDGE,MULTIPLE,C,C
+B050,mab2230,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y1,Genetics,Cell and Molecular Biology,D,NONE,D,D,CANNOT_JUDGE
+B051,mab2034,HIGH_CONFIDENCE_ERROR,openrouter/openai/gpt-5.6-terra,B,0.944,C,Y1,Genetics,Cell and Molecular Biology,C,MULTIPLE,D,B,CANNOT_JUDGE
+B052,mab1203,HIGH_CONFIDENCE_ERROR,openrouter/google/gemini-3.6-flash,C,0.98,E,Y4,Anesthesia,Anesthesia,C,A,MULTIPLE,C,C
+B053,mab1988,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-20b,A,0.9,C,Y1,Cell Biology,Cell and Molecular Biology,C,C,D,C,CANNOT_JUDGE
+B054,mab1706,HIGH_CONFIDENCE_ERROR,openrouter/google/gemini-3.6-flash,C,0.91,A,Y1,Cell Biology,Cell and Molecular Biology,C,A,D,C,CANNOT_JUDGE
+B055,mab2111,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,D,Y1,Cell Biology,Cell and Molecular Biology,A,A,B,A,CANNOT_JUDGE
+B056,mab3032,HIGH_CONFIDENCE_ERROR,groq/llama-3.3-70b-versatile,C,0.9,D,Y1,Physics,Chemistry and Physics,CANNOT_JUDGE,A,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B057,mab178,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,C,Y2,Histology,Anatomy,D,D,D,D,D
+B058,mab1858,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,A,Y1,Cell Biology,Cell and Molecular Biology,D,A,C,D,D
+B059,mab2259,UNANIMOUS_DISAGREEMENT,all seven configurations,C,,B,Y1,Genetics,Cell and Molecular Biology,B,C,C,C,C
+B060,mab2221,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,C,Y1,Cell Biology,Cell and Molecular Biology,CANNOT_JUDGE,CANNOT_JUDGE,A,CANNOT_JUDGE,CANNOT_JUDGE
+B061,mab2357,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,B,Y1,Physics,Chemistry and Physics,C,A,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B062,mab4716,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y1,Statistics,Statistics,D,A,D,CANNOT_JUDGE,D
+B063,mab1904,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,A,Y1,Cell Biology,Cell and Molecular Biology,B,CANNOT_JUDGE,B,D,D
+B064,mab339,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-120b,C,0.946,A,Y1,Anatomy,Anatomy,C,B,A,D,A
+B065,mab2008,HIGH_CONFIDENCE_ERROR,openrouter/openai/gpt-5.6-terra,D,0.99,C,Y1,Genetics,Cell and Molecular Biology,C,D,D,D,D
+B066,mab4739,HIGH_CONFIDENCE_ERROR,openrouter/anthropic/claude-sonnet-5,B,0.9,D,Y1,Statistics,Statistics,C,NONE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B067,mab1282,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-20b,D,0.92,A,Y1,Biochemistry,Biochemistry,A,A,A,CANNOT_JUDGE,CANNOT_JUDGE
+B068,mab3543,HIGH_CONFIDENCE_ERROR,groq/llama-3.1-8b-instant,E,0.91,D,Y5,Ophthalmology,Ophthalmology,A,D,E,B,B
+B069,mab1370,HIGH_CONFIDENCE_ERROR,groq/llama-3.1-8b-instant,B,0.904,A,Y1,Biochemistry,Biochemistry,E,D,MULTIPLE,CANNOT_JUDGE,MULTIPLE
+B070,mab4003,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y1,Physiology,Physiology,C,A,D,D,D
+B071,mab1447,HIGH_CONFIDENCE_ERROR,openrouter/openai/gpt-5.6-terra,C,0.982,A,Y2,Biochemistry,Biochemistry,B,MULTIPLE,MULTIPLE,A,MULTIPLE
+B072,mab596,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,D,Y2,Anatomy,Anatomy,A,MULTIPLE,D,D,A
+B073,mab2066,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,D,Y1,Genetics,Cell and Molecular Biology,A,MULTIPLE,MULTIPLE,A,A
+B074,mab2987,HIGH_CONFIDENCE_ERROR,openrouter/google/gemini-3.6-flash,D,0.95,A,Y3,Physics,Chemistry and Physics,B,CANNOT_JUDGE,C,CANNOT_JUDGE,CANNOT_JUDGE
+B075,mab4644,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,C,Y1,Statistics,Statistics,D,A,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B076,mab2297,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-120b,B,0.946,A,Y1,Physics,Chemistry and Physics,B,D,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B077,mab1246,HIGH_CONFIDENCE_ERROR,groq/llama-3.3-70b-versatile,B,0.9,E,Y4,Anesthesia,Anesthesia,E,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B078,mab507,HIGH_CONFIDENCE_ERROR,groq/llama-3.3-70b-versatile,B,0.9,C,Y2,Histology,Anatomy,D,MULTIPLE,B,CANNOT_JUDGE,C
+B079,mab1718,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,B,Y1,Genetics,Cell and Molecular Biology,A,A,A,A,CANNOT_JUDGE
+B080,mab2660,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,A,Y1,Physics,Chemistry and Physics,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B081,mab3843,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,C,Y2,Physiology,Physiology,D,D,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B082,mab2374,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,B,Y1,Physics,Chemistry and Physics,A,NONE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B083,mab2985,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,A,Y3,Physics,Chemistry and Physics,A,A,A,B,B
+B084,mab301,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,A,Y1,Anatomy,Anatomy,CANNOT_JUDGE,CANNOT_JUDGE,B,B,B
+B085,mab1929,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y1,Cell Biology,Cell and Molecular Biology,D,D,D,D,D
+B086,mab2619,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y1,Physics,Chemistry and Physics,B,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B087,mab2314,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,C,Y1,Chemistry,Chemistry and Physics,D,D,D,CANNOT_JUDGE,CANNOT_JUDGE
+B088,mab1329,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-120b,A,0.95,D,Y2,Biochemistry,Biochemistry,D,MULTIPLE,D,D,D
+B089,mab4315,HIGH_CONFIDENCE_ERROR,groq/llama-3.3-70b-versatile,C,0.9,B,Y1,Physiology,Physiology,B,B,A,B,B
+B090,mab2368,HIGH_CONFIDENCE_ERROR,groq/openai/gpt-oss-120b,A,0.95,D,Y3,Physics,Chemistry and Physics,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B091,mab4242,HIGH_CONFIDENCE_ERROR,openrouter/google/gemini-3.6-flash,B,1.0,A,Y1,Physiology,Physiology,B,A,B,B,B
+B092,mab1801,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,D,Y1,Cell Biology,Cell and Molecular Biology,C,C,A,A,A
+B093,mab2624,HIGH_CONFIDENCE_ERROR,openrouter/openai/gpt-5.6-terra,D,0.948,A,Y1,Chemistry,Chemistry and Physics,A,A,CANNOT_JUDGE,CANNOT_JUDGE,CANNOT_JUDGE
+B094,mab1178,UNANIMOUS_DISAGREEMENT,all seven configurations,C,,B,Y2,Histology,Anatomy,B,MULTIPLE,MULTIPLE,C,C
+B095,mab2141,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y1,Genetics,Cell and Molecular Biology,CANNOT_JUDGE,D,D,D,CANNOT_JUDGE
+B096,mab2283,HIGH_CONFIDENCE_ERROR,openrouter/google/gemini-3.6-flash,B,1.0,C,Y1,Genetics,Cell and Molecular Biology,D,B,B,B,B
+B097,mab4911,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,D,Y4,Surgery,Surgery,B,B,A,B,C
+B098,mab4767,UNANIMOUS_DISAGREEMENT,all seven configurations,B,,C,Y1,Statistics,Statistics,C,CANNOT_JUDGE,B,CANNOT_JUDGE,CANNOT_JUDGE
+B099,mab3928,UNANIMOUS_DISAGREEMENT,all seven configurations,A,,D,Y1,Physiology,Physiology,A,CANNOT_JUDGE,CANNOT_JUDGE,A,A
+B100,mab4158,UNANIMOUS_DISAGREEMENT,all seven configurations,D,,B,Y1,Physiology,Physiology,B,A,D,D,D
+B101,mab2817,HIGH_CONFIDENCE_ERROR,openrouter/anthropic/claude-sonnet-5,A,0.9,D,Y1,Physics,Chemistry and Physics,D,MULTIPLE,A,CANNOT_JUDGE,A

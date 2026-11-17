@@ -1,0 +1,273 @@
+{
+  "partA": {
+    "fleiss_all": 0.098,
+    "fleiss_excluding_R1": 0.309,
+    "cohen_p1_p2_all": [
+      0.373,
+      0.747
+    ],
+    "cohen_p1_p2_excluding_R1": [
+      0.752,
+      0.921
+    ],
+    "table8": [
+      {
+        "stratum": "R1",
+        "sampled": 36,
+        "population": 36,
+        "pharmacist_1": 30,
+        "pharmacist_2": 1,
+        "pharmacist_3": 0,
+        "majority_changed": 1,
+        "pct": 2.8,
+        "wilson_95": [
+          0.5,
+          14.2
+        ]
+      },
+      {
+        "stratum": "R2_only",
+        "sampled": 30,
+        "population": 86,
+        "pharmacist_1": 23,
+        "pharmacist_2": 19,
+        "pharmacist_3": 0,
+        "majority_changed": 17,
+        "pct": 56.7,
+        "wilson_95": [
+          39.2,
+          72.6
+        ]
+      },
+      {
+        "stratum": "R3",
+        "sampled": 5,
+        "population": 5,
+        "pharmacist_1": 0,
+        "pharmacist_2": 0,
+        "pharmacist_3": 0,
+        "majority_changed": 0,
+        "pct": 0.0,
+        "wilson_95": [
+          0.0,
+          43.4
+        ]
+      },
+      {
+        "stratum": "Unflagged",
+        "sampled": 79,
+        "population": 373,
+        "pharmacist_1": 2,
+        "pharmacist_2": 1,
+        "pharmacist_3": 0,
+        "majority_changed": 1,
+        "pct": 1.3,
+        "wilson_95": [
+          0.2,
+          6.8
+        ]
+      }
+    ],
+    "weighted": {
+      "R2_only_changed_est": 48.7,
+      "unflagged_changed_est": 4.7,
+      "R1_share": 0.402,
+      "R1_share_95": [
+        0.335,
+        0.498
+      ],
+      "screen_share": 0.947,
+      "screen_share_95": [
+        0.84,
+        1.0
+      ]
+    }
+  },
+  "partB": {
+    "fleiss_all_categories": 0.258,
+    "cannot_judge_rate": {
+      "physician_1": 0.119,
+      "physician_2": 0.218,
+      "physician_3": 0.238,
+      "physician_4": 0.376,
+      "physician_5": 0.485
+    },
+    "multiple_rate": {
+      "physician_1": 0.0,
+      "physician_2": 0.178,
+      "physician_3": 0.109,
+      "physician_4": 0.059,
+      "physician_5": 0.02
+    },
+    "table9": {
+      "HIGH_CONFIDENCE_ERROR": {
+        "n": 42,
+        "no majority": 16,
+        "CANNOT_JUDGE": 11,
+        "key": 8,
+        "model": 6,
+        "MULTIPLE": 1,
+        "model_wilson_95": [
+          6.7,
+          27.8
+        ],
+        "key_wilson_95": [
+          10.0,
+          33.3
+        ]
+      },
+      "UNANIMOUS_DISAGREEMENT": {
+        "n": 59,
+        "model": 30,
+        "CANNOT_JUDGE": 16,
+        "no majority": 12,
+        "key": 1,
+        "model_wilson_95": [
+          38.4,
+          63.2
+        ],
+        "key_wilson_95": [
+          0.3,
+          9.0
+        ]
+      }
+    },
+    "unanimous_endorsements": {
+      "model": 138,
+      "key": 20,
+      "of": 295
+    },
+    "model_majority_specialties": {
+      "Cell and Molecular Biology": 14,
+      "Anatomy": 6,
+      "Physiology": 4,
+      "Chemistry and Physics": 3,
+      "Statistics": 2,
+      "Surgery": 1
+    },
+    "exclusion_robustness": {
+      "physician_1": {
+        "model": 21,
+        "key": 0
+      },
+      "physician_2": {
+        "model": 23,
+        "key": 0
+      },
+      "physician_3": {
+        "model": 18,
+        "key": 0
+      },
+      "physician_4": {
+        "model": 15,
+        "key": 1
+      },
+      "physician_5": {
+        "model": 19,
+        "key": 1
+      },
+      "physician_1+physician_2": {
+        "model": 30,
+        "key": 1
+      },
+      "physician_1+physician_3": {
+        "model": 31,
+        "key": 0
+      },
+      "physician_1+physician_4": {
+        "model": 25,
+        "key": 1
+      },
+      "physician_1+physician_5": {
+        "model": 26,
+        "key": 2
+      },
+      "physician_2+physician_3": {
+        "model": 33,
+        "key": 0
+      },
+      "physician_2+physician_4": {
+        "model": 27,
+        "key": 3
+      },
+      "physician_2+physician_5": {
+        "model": 30,
+        "key": 4
+      },
+      "physician_3+physician_4": {
+        "model": 27,
+        "key": 1
+      },
+      "physician_3+physician_5": {
+        "model": 27,
+        "key": 1
+      },
+      "physician_4+physician_5": {
+        "model": 23,
+        "key": 3
+      }
+    }
+  },
+  "unblinded": {
+    "raters": [
+      "physician_1",
+      "physician_5"
+    ],
+    "cohen_key_validity": [
+      0.011,
+      0.287
+    ],
+    "HIGH_CONFIDENCE_ERROR": {
+      "physician_1": {
+        "KEY_INCORRECT": 30,
+        "KEY_CORRECT": 12
+      },
+      "physician_5": {
+        "CANNOT_JUDGE": 19,
+        "KEY_INCORRECT": 8,
+        "MULTIPLE": 6,
+        "KEY_CORRECT": 5,
+        "FLAWED": 4
+      },
+      "both_incorrect": 7
+    },
+    "UNANIMOUS_DISAGREEMENT": {
+      "physician_1": {
+        "KEY_INCORRECT": 48,
+        "KEY_CORRECT": 11
+      },
+      "physician_5": {
+        "KEY_INCORRECT": 27,
+        "CANNOT_JUDGE": 22,
+        "MULTIPLE": 6,
+        "FLAWED": 4
+      },
+      "both_incorrect": 20
+    },
+    "model_majority_items": {
+      "physician_1": {
+        "KEY_INCORRECT": 27,
+        "KEY_CORRECT": 3
+      },
+      "physician_5": {
+        "KEY_INCORRECT": 18,
+        "CANNOT_JUDGE": 6,
+        "MULTIPLE": 6
+      }
+    },
+    "severity_when_key_correct": {
+      "physician_1": {
+        "MINOR": 18,
+        "MODERATE": 4,
+        "ACCEPTABLE": 1
+      },
+      "physician_5": {
+        "ACCEPTABLE": 5
+      }
+    },
+    "consistent_with_own_blinded_answer": {
+      "physician_1": 89,
+      "physician_5": 78
+    }
+  }
+}

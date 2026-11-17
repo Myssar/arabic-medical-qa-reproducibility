@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pia-audit"
+version = "0.1.0"
+description = "Permutation integrity auditing for multiple-choice LLM benchmarks"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Myssar Al-Battbootti"}, {name = "Ahmed Adil Alkadhmawee"}, {name = "Iuliana Marin"}]
+dependencies = ["pandas>=1.5", "numpy>=1.23"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+pia = "pia.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

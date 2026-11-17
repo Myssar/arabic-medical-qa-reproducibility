@@ -1,0 +1,3 @@
+,n,no majority,CANNOT_JUDGE,key,model,MULTIPLE,model_wilson_95,key_wilson_95
+HIGH_CONFIDENCE_ERROR,42,16,11,8,6,1,"(np.float64(6.7), np.float64(27.8))","(np.float64(10.0), np.float64(33.3))"
+UNANIMOUS_DISAGREEMENT,59,12,16,1,30,,"(np.float64(38.4), np.float64(63.2))","(np.float64(0.3), np.float64(9.0))"

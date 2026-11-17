@@ -1,0 +1,501 @@
+item_id,umbrella_specialty,curriculum_level
+mab1001,Anatomy,Y1
+mab1017,Anatomy,Y1
+mab1049,Anatomy,Y1
+mab1051,Anatomy,Y1
+mab1073,Anatomy,Y1
+mab1077,Anatomy,Y1
+mab1085,Anatomy,Y1
+mab1096,Anatomy,Y2
+mab1098,Anatomy,Y2
+mab1121,Anatomy,Y2
+mab1125,Anatomy,Y1
+mab1134,Anatomy,Y1
+mab1140,Anatomy,Y2
+mab1142,Anatomy,Y2
+mab1176,Anatomy,Y2
+mab1211,Anesthesia,Y4
+mab1216,Anesthesia,Y4
+mab1229,Anesthesia,Y3
+mab1235,Anesthesia,Y4
+mab1253,Anesthesia,Y4
+mab1258,Anesthesia,Y4
+mab1261,Anesthesia,Y4
+mab1280,Anesthesia,Y3
+mab1287,Biochemistry,Y2
+mab130,Anatomy,Y2
+mab1300,Biochemistry,Y1
+mab1305,Biochemistry,Y2
+mab1307,Biochemistry,Y2
+mab1318,Biochemistry,Y1
+mab1330,Biochemistry,Y2
+mab1334,Biochemistry,Y1
+mab1336,Biochemistry,Y2
+mab1337,Biochemistry,Y2
+mab1340,Biochemistry,Y2
+mab1363,Biochemistry,Y2
+mab1368,Biochemistry,Y2
+mab1387,Biochemistry,Y2
+mab1392,Biochemistry,Y2
+mab1413,Biochemistry,Y2
+mab1420,Biochemistry,Y2
+mab1436,Biochemistry,Y1
+mab1444,Biochemistry,Y1
+mab145,Anatomy,Y1
+mab146,Anatomy,Y2
+mab1471,Biochemistry,Y1
+mab1497,Biochemistry,Y1
+mab151,Anatomy,Y1
+mab1511,Biochemistry,Y2
+mab1526,Biochemistry,Y2
+mab1539,Biochemistry,Y2
+mab154,Anatomy,Y1
+mab1540,Biochemistry,Y1
+mab1547,Biochemistry,Y2
+mab1565,Biochemistry,Y2
+mab1566,Biochemistry,Y2
+mab1570,Biochemistry,Y2
+mab1574,Biochemistry,Y2
+mab1578,Biochemistry,Y1
+mab1598,Biochemistry,Y2
+mab1600,Biochemistry,Y2
+mab1608,Biochemistry,Y2
+mab161,Anatomy,Y1
+mab1622,Biochemistry,Y2
+mab1623,Biochemistry,Y1
+mab1629,Biochemistry,Y1
+mab1643,Biochemistry,Y2
+mab1653,Cell and Molecular Biology,Y1
+mab1660,Cell and Molecular Biology,Y1
+mab1672,Cell and Molecular Biology,Y1
+mab1687,Cell and Molecular Biology,Y1
+mab169,Anatomy,Y2
+mab1690,Cell and Molecular Biology,Y1
+mab1711,Cell and Molecular Biology,Y1
+mab173,Anatomy,Y1
+mab174,Anatomy,Y1
+mab1746,Cell and Molecular Biology,Y1
+mab1755,Cell and Molecular Biology,Y1
+mab176,Anatomy,Y2
+mab1763,Cell and Molecular Biology,Y1
+mab1771,Cell and Molecular Biology,Y1
+mab1777,Cell and Molecular Biology,Y1
+mab1787,Cell and Molecular Biology,Y1
+mab1803,Cell and Molecular Biology,Y1
+mab1809,Cell and Molecular Biology,Y1
+mab1810,Cell and Molecular Biology,Y1
+mab1840,Cell and Molecular Biology,Y1
+mab1847,Cell and Molecular Biology,Y1
+mab1851,Cell and Molecular Biology,Y1
+mab1859,Cell and Molecular Biology,Y1
+mab1861,Cell and Molecular Biology,Y1
+mab1883,Cell and Molecular Biology,Y1
+mab1893,Cell and Molecular Biology,Y1
+mab1896,Cell and Molecular Biology,Y1
+mab1899,Cell and Molecular Biology,Y1
+mab1900,Cell and Molecular Biology,Y1
+mab1908,Cell and Molecular Biology,Y1
+mab1912,Cell and Molecular Biology,Y1
+mab1930,Cell and Molecular Biology,Y1
+mab1948,Cell and Molecular Biology,Y1
+mab1969,Cell and Molecular Biology,Y1
+mab197,Anatomy,Y1
+mab1980,Cell and Molecular Biology,Y1
+mab1984,Cell and Molecular Biology,Y1
+mab1987,Cell and Molecular Biology,Y1
+mab1998,Cell and Molecular Biology,Y1
+mab2007,Cell and Molecular Biology,Y1
+mab2012,Cell and Molecular Biology,Y1
+mab2025,Cell and Molecular Biology,Y1
+mab2027,Cell and Molecular Biology,Y1
+mab2032,Cell and Molecular Biology,Y1
+mab2033,Cell and Molecular Biology,Y1
+mab2044,Cell and Molecular Biology,Y1
+mab2062,Cell and Molecular Biology,Y1
+mab2072,Cell and Molecular Biology,Y1
+mab2089,Cell and Molecular Biology,Y1
+mab2095,Cell and Molecular Biology,Y1
+mab2101,Cell and Molecular Biology,Y1
+mab211,Anatomy,Y1
+mab2112,Cell and Molecular Biology,Y1
+mab2117,Cell and Molecular Biology,Y1
+mab2119,Cell and Molecular Biology,Y1
+mab2130,Cell and Molecular Biology,Y1
+mab2152,Cell and Molecular Biology,Y1
+mab2156,Cell and Molecular Biology,Y1
+mab2159,Cell and Molecular Biology,Y1
+mab2171,Cell and Molecular Biology,Y1
+mab2173,Cell and Molecular Biology,Y1
+mab2179,Cell and Molecular Biology,Y1
+mab2183,Cell and Molecular Biology,Y1
+mab2186,Cell and Molecular Biology,Y1
+mab2188,Cell and Molecular Biology,Y1
+mab2190,Cell and Molecular Biology,Y1
+mab2224,Cell and Molecular Biology,Y1
+mab2251,Cell and Molecular Biology,Y1
+mab2274,Cell and Molecular Biology,Y1
+mab2277,Cell and Molecular Biology,Y1
+mab2287,Chemistry and Physics,Y1
+mab229,Anatomy,Y1
+mab2301,Chemistry and Physics,Y1
+mab2303,Chemistry and Physics,Y1
+mab2308,Chemistry and Physics,Y1
+mab2309,Chemistry and Physics,Y1
+mab2315,Chemistry and Physics,Y1
+mab2316,Chemistry and Physics,Y1
+mab2322,Chemistry and Physics,Y1
+mab2338,Chemistry and Physics,Y1
+mab2350,Chemistry and Physics,Y1
+mab236,Anatomy,Y1
+mab2369,Chemistry and Physics,Y3
+mab2373,Chemistry and Physics,Y1
+mab2393,Chemistry and Physics,Y1
+mab2396,Chemistry and Physics,Y1
+mab2398,Chemistry and Physics,Y1
+mab2403,Chemistry and Physics,Y1
+mab2416,Chemistry and Physics,Y1
+mab2418,Chemistry and Physics,Y3
+mab2426,Chemistry and Physics,Y1
+mab2431,Chemistry and Physics,Y1
+mab2443,Chemistry and Physics,Y1
+mab2450,Chemistry and Physics,Y1
+mab2451,Chemistry and Physics,Y3
+mab2456,Chemistry and Physics,Y1
+mab2472,Chemistry and Physics,Y1
+mab2482,Chemistry and Physics,Y3
+mab2483,Chemistry and Physics,Y1
+mab2509,Chemistry and Physics,Y1
+mab252,Anatomy,Y2
+mab2520,Chemistry and Physics,Y1
+mab2522,Chemistry and Physics,Y1
+mab2523,Chemistry and Physics,Y1
+mab2528,Chemistry and Physics,Y1
+mab2531,Chemistry and Physics,Y1
+mab2532,Chemistry and Physics,Y1
+mab2549,Chemistry and Physics,Y3
+mab2556,Chemistry and Physics,Y1
+mab2580,Chemistry and Physics,Y1
+mab2599,Chemistry and Physics,Y1
+mab2604,Chemistry and Physics,Y1
+mab2605,Chemistry and Physics,Y1
+mab261,Anatomy,Y1
+mab2611,Chemistry and Physics,Y3
+mab2617,Chemistry and Physics,Y1
+mab2622,Chemistry and Physics,Y1
+mab2625,Chemistry and Physics,Y1
+mab2644,Chemistry and Physics,Y1
+mab2663,Chemistry and Physics,Y3
+mab2681,Chemistry and Physics,Y1
+mab2715,Chemistry and Physics,Y3
+mab2723,Chemistry and Physics,Y3
+mab2727,Chemistry and Physics,Y1
+mab2737,Chemistry and Physics,Y1
+mab2756,Chemistry and Physics,Y1
+mab2758,Chemistry and Physics,Y1
+mab2759,Chemistry and Physics,Y1
+mab276,Anatomy,Y2
+mab2773,Chemistry and Physics,Y1
+mab28,Anatomy,Y1
+mab2827,Chemistry and Physics,Y1
+mab2834,Chemistry and Physics,Y1
+mab2838,Chemistry and Physics,Y1
+mab2848,Chemistry and Physics,Y1
+mab2850,Chemistry and Physics,Y3
+mab2856,Chemistry and Physics,Y1
+mab2901,Chemistry and Physics,Y3
+mab2913,Chemistry and Physics,Y1
+mab2919,Chemistry and Physics,Y1
+mab2922,Chemistry and Physics,Y1
+mab2932,Chemistry and Physics,Y1
+mab2935,Chemistry and Physics,Y1
+mab2938,Chemistry and Physics,Y1
+mab2943,Chemistry and Physics,Y1
+mab2951,Chemistry and Physics,Y1
+mab296,Anatomy,Y1
+mab2960,Chemistry and Physics,Y1
+mab2971,Chemistry and Physics,Y3
+mab2973,Chemistry and Physics,Y1
+mab2974,Chemistry and Physics,Y1
+mab2997,Chemistry and Physics,Y1
+mab2999,Chemistry and Physics,Y1
+mab3043,Chemistry and Physics,Y3
+mab3049,Chemistry and Physics,Y1
+mab3058,Chemistry and Physics,Y3
+mab3065,Chemistry and Physics,Y1
+mab3071,Embryology,Y2
+mab3077,Emergency Medicine,Y4
+mab308,Anatomy,Y1
+mab3084,Emergency Medicine,Y3
+mab3122,Internal Medicine,Y1
+mab3124,Internal Medicine,Y1
+mab3125,Internal Medicine,Y1
+mab3138,Internal Medicine,Y1
+mab3139,Internal Medicine,Y1
+mab315,Anatomy,Y2
+mab3150,Internal Medicine,Y1
+mab3157,Internal Medicine,Y4
+mab3169,Internal Medicine,Y4
+mab318,Anatomy,Y1
+mab3182,Internal Medicine,Y4
+mab3190,Internal Medicine,Y1
+mab3196,Internal Medicine,Y5
+mab3213,Internal Medicine,Y5
+mab3221,Internal Medicine,Y5
+mab3227,Internal Medicine,Y3
+mab3239,Internal Medicine,Y2
+mab3246,Internal Medicine,Y2
+mab3255,Internal Medicine,Y2
+mab3260,Internal Medicine,Y2
+mab3274,Microbiology,Y3
+mab3293,Microbiology,Y3
+mab3296,Microbiology,Y3
+mab331,Anatomy,Y2
+mab3312,Microbiology,Y3
+mab3320,Microbiology,Y3
+mab3327,Microbiology,Y3
+mab3331,Microbiology,Y3
+mab3346,Microbiology,Y3
+mab3367,Microbiology,Y3
+mab3370,Microbiology,Y3
+mab3372,Microbiology,Y3
+mab3395,Microbiology,Y3
+mab34,Anatomy,Y2
+mab340,Anatomy,Y1
+mab3401,Microbiology,Y3
+mab3411,Microbiology,Y3
+mab3420,Microbiology,Y3
+mab3437,Ophthalmology,Y5
+mab3441,Ophthalmology,Y5
+mab3451,Ophthalmology,Y5
+mab346,Anatomy,Y1
+mab3467,Ophthalmology,Y5
+mab3475,Ophthalmology,Y5
+mab3476,Ophthalmology,Y5
+mab3496,Ophthalmology,Y5
+mab3505,Ophthalmology,Y5
+mab3507,Ophthalmology,Y5
+mab3529,Ophthalmology,Y5
+mab3537,Ophthalmology,Y5
+mab3540,Ophthalmology,Y5
+mab3548,Ophthalmology,Y5
+mab3552,Ophthalmology,Y5
+mab3553,Ophthalmology,Y5
+mab3581,Ophthalmology,Y5
+mab3587,Ophthalmology,Y5
+mab3594,Ophthalmology,Y5
+mab3601,Ophthalmology,Y5
+mab3607,Ophthalmology,Y5
+mab3608,Ophthalmology,Y5
+mab3616,Ophthalmology,Y5
+mab3640,Ophthalmology,Y5
+mab3657,Ophthalmology,Y5
+mab367,Anatomy,Y1
+mab3679,Ophthalmology,Y5
+mab3681,Ophthalmology,Y5
+mab3685,Pathology,Y2
+mab3698,Pathology,Y2
+mab3715,Pathology,Y2
+mab3719,Pathology,Y2
+mab3723,Pathology,Y2
+mab3748,Pharmacology,Y3
+mab375,Anatomy,Y1
+mab3760,Pharmacology,Y3
+mab3761,Pharmacology,Y3
+mab3767,Pharmacology,Y3
+mab3782,Pharmacology,Y3
+mab3795,Pharmacology,Y3
+mab3822,Physiology,Y1
+mab3842,Physiology,Y1
+mab3868,Physiology,Y1
+mab3874,Physiology,Y1
+mab3889,Physiology,Y2
+mab3915,Physiology,Y2
+mab3919,Physiology,Y1
+mab3921,Physiology,Y2
+mab3940,Physiology,Y1
+mab3948,Physiology,Y1
+mab3959,Physiology,Y2
+mab3963,Physiology,Y1
+mab3971,Physiology,Y1
+mab3986,Physiology,Y1
+mab3987,Physiology,Y1
+mab3990,Physiology,Y2
+mab3998,Physiology,Y2
+mab4002,Physiology,Y1
+mab4018,Physiology,Y2
+mab4020,Physiology,Y2
+mab4027,Physiology,Y1
+mab404,Anatomy,Y1
+mab4056,Physiology,Y2
+mab4089,Physiology,Y1
+mab4094,Physiology,Y2
+mab4113,Physiology,Y1
+mab4124,Physiology,Y2
+mab4126,Physiology,Y1
+mab413,Anatomy,Y1
+mab4130,Physiology,Y1
+mab4135,Physiology,Y2
+mab4139,Physiology,Y2
+mab4142,Physiology,Y2
+mab4159,Physiology,Y1
+mab4163,Physiology,Y1
+mab4172,Physiology,Y1
+mab4173,Physiology,Y2
+mab4178,Physiology,Y2
+mab4189,Physiology,Y1
+mab4192,Physiology,Y1
+mab4212,Physiology,Y1
+mab4218,Physiology,Y1
+mab4225,Physiology,Y2
+mab4236,Physiology,Y1
+mab424,Anatomy,Y1
+mab4240,Physiology,Y1
+mab4254,Physiology,Y1
+mab4255,Physiology,Y1
+mab4263,Physiology,Y1
+mab4277,Physiology,Y1
+mab4281,Physiology,Y1
+mab4296,Physiology,Y1
+mab4308,Physiology,Y1
+mab431,Anatomy,Y2
+mab4311,Physiology,Y1
+mab4316,Physiology,Y1
+mab4322,Physiology,Y1
+mab4324,Physiology,Y2
+mab4334,Physiology,Y1
+mab4347,Physiology,Y1
+mab4356,Physiology,Y1
+mab4362,Physiology,Y1
+mab4378,Physiology,Y1
+mab4387,Physiology,Y1
+mab4393,Physiology,Y1
+mab4395,Physiology,Y1
+mab4406,Physiology,Y1
+mab4410,Physiology,Y1
+mab4424,Physiology,Y1
+mab4432,Physiology,Y1
+mab4440,Physiology,Y1
+mab4460,Physiology,Y2
+mab449,Anatomy,Y1
+mab4500,Statistics,Y1
+mab4508,Statistics,Y1
+mab4512,Statistics,Y1
+mab4515,Statistics,Y1
+mab4532,Statistics,Y1
+mab4541,Statistics,Y1
+mab4542,Statistics,Y1
+mab455,Anatomy,Y1
+mab4559,Statistics,Y1
+mab456,Anatomy,Y1
+mab4570,Statistics,Y1
+mab4578,Statistics,Y1
+mab4593,Statistics,Y1
+mab4595,Statistics,Y1
+mab4607,Statistics,Y1
+mab4632,Statistics,Y1
+mab4642,Statistics,Y1
+mab4663,Statistics,Y1
+mab4670,Statistics,Y1
+mab4689,Statistics,Y1
+mab4693,Statistics,Y1
+mab4695,Statistics,Y1
+mab4709,Statistics,Y1
+mab4714,Statistics,Y1
+mab473,Anatomy,Y1
+mab4742,Statistics,Y1
+mab4743,Statistics,Y1
+mab4753,Statistics,Y1
+mab4766,Statistics,Y1
+mab4777,Statistics,Y1
+mab4783,Statistics,Y1
+mab4786,Statistics,Y1
+mab479,Anatomy,Y2
+mab4790,Statistics,Y1
+mab4799,Statistics,Y1
+mab4814,Statistics,Y1
+mab4815,Statistics,Y1
+mab4816,Statistics,Y1
+mab4824,Statistics,Y1
+mab4827,Statistics,Y1
+mab4834,Statistics,Y1
+mab4849,Surgery,Y3
+mab485,Anatomy,Y2
+mab4854,Surgery,Y3
+mab4863,Surgery,Y4
+mab4886,Surgery,Y4
+mab4896,Surgery,Y4
+mab4900,Surgery,Y4
+mab4915,Surgery,Y4
+mab4921,Surgery,Y4
+mab4924,Surgery,Y4
+mab4926,Surgery,Y4
+mab4929,Surgery,Y4
+mab4956,Surgery,Y3
+mab4962,Surgery,Y3
+mab502,Anatomy,Y2
+mab505,Anatomy,Y1
+mab511,Anatomy,Y1
+mab52,Anatomy,Y1
+mab535,Anatomy,Y2
+mab541,Anatomy,Y1
+mab543,Anatomy,Y1
+mab566,Anatomy,Y2
+mab574,Anatomy,Y2
+mab594,Anatomy,Y1
+mab595,Anatomy,Y1
+mab619,Anatomy,Y2
+mab625,Anatomy,Y2
+mab627,Anatomy,Y1
+mab637,Anatomy,Y1
+mab642,Anatomy,Y1
+mab652,Anatomy,Y2
+mab67,Anatomy,Y2
+mab672,Anatomy,Y1
+mab707,Anatomy,Y1
+mab708,Anatomy,Y2
+mab712,Anatomy,Y2
+mab714,Anatomy,Y1
+mab717,Anatomy,Y2
+mab73,Anatomy,Y1
+mab736,Anatomy,Y2
+mab742,Anatomy,Y2
+mab753,Anatomy,Y1
+mab765,Anatomy,Y1
+mab776,Anatomy,Y2
+mab780,Anatomy,Y2
+mab795,Anatomy,Y2
+mab8,Anatomy,Y1
+mab80,Anatomy,Y1
+mab807,Anatomy,Y1
+mab812,Anatomy,Y1
+mab820,Anatomy,Y1
+mab824,Anatomy,Y1
+mab834,Anatomy,Y1
+mab837,Anatomy,Y1
+mab842,Anatomy,Y2
+mab844,Anatomy,Y1
+mab853,Anatomy,Y1
+mab855,Anatomy,Y1
+mab864,Anatomy,Y1
+mab871,Anatomy,Y1
+mab872,Anatomy,Y1
+mab88,Anatomy,Y1
+mab883,Anatomy,Y2
+mab892,Anatomy,Y2
+mab90,Anatomy,Y1
+mab901,Anatomy,Y2
+mab905,Anatomy,Y1
+mab913,Anatomy,Y1
+mab920,Anatomy,Y1
+mab925,Anatomy,Y1
+mab941,Anatomy,Y2
+mab943,Anatomy,Y1
+mab944,Anatomy,Y2
+mab948,Anatomy,Y1
+mab953,Anatomy,Y2
+mab963,Anatomy,Y1
+mab970,Anatomy,Y2
+mab982,Anatomy,Y2
+mab984,Anatomy,Y1
+mab990,Anatomy,Y2
+mab991,Anatomy,Y1

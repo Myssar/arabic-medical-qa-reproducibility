@@ -1,54 +1,80 @@
-# Arabic medical QA: offline reproducibility core
+# Arabic medical QA: reproducibility package
 
-Repository preparation: 23 September 2026. Remote publication pending.
+Code, derived data and verification scripts for the article:
 
-This package checks and reconstructs selected analyses from retained, derived study exports. It requires no API keys, network calls during analysis, or new model generations. It is not the complete manuscript submission package or an independent validation of the source data.
+> Al-Battbootti M, Alkadhmawee AA, Aledan H, Jasim ZM, Marin I. *Permutation integrity auditing for reliability evaluation of large language models: confidence, calibration and answer stability in Arabic medical question answering.* Submitted to *Artificial Intelligence in Medicine*.
 
-## Quick verification
+No benchmark question text is included anywhere in this repository. Files contain MedAraBench item identifiers, answer labels, model outputs reduced to labels and confidence, and derived results. Obtain MedAraBench itself from its authors.
 
-Use Python 3.12 (archived version 3.12.14):
+## What is where
+
+| Folder | Reproduces | Article sections |
+|---|---|---|
+| repository root (`inputs/`, `results/`, `supplements/`, `*.py`) | Confidence reliability, calibration, recalibration, selective risk and transition analyses from retained exports | 3.4–3.6, 3.8, 4.1–4.4, 4.6; Tables S1–S35 |
+| `pia-audit/` | The permutation integrity audit (rules R1–R4), safe permutations, answer-change decomposition and the perturbation specificity ratio ρ | 3.7, 4.5, Table 6 |
+| `expert_review/` | Pharmacist validation of the audit and physician review of answer-key disagreements | 3.7, 3.9, 4.5, 4.7; Tables 8–9 |
+
+## Quick start
+
+Python 3.12 is recommended (archived version 3.12.14).
 
 ```bash
-python -m venv .venv
-# Linux/macOS:
-source .venv/bin/activate
-# Windows instead: .venv\Scripts\activate
+git clone https://github.com/Myssar/arabic-medical-qa-reproducibility.git
+cd arabic-medical-qa-reproducibility
+python -m venv .venv && source .venv/bin/activate     # Windows: .venv\Scripts\activate
 python -m pip install -r requirements.txt
+
+# 1. Confidence reliability core
 python check_integrity.py
 python verify_step2.py
+
+# 2. Permutation integrity audit
+cd pia-audit && pip install -e ".[test]" && pytest && cd ..
+python pia-audit/reproduce/reproduce_instability.py
+# the full R1–R4 register needs the MedAraBench test split:
+# python pia-audit/reproduce/reproduce_audit.py --benchmark medarabench-test_split.csv
+
+# 3. Expert review (Tables 8 and 9)
+python expert_review/score_expert_review.py
 ```
 
-Verification checks 105 confidence intervals against stored bootstrap draws, seven weighted-versus-duplicated refit comparisons, within-fold separation, and supplementary count accounting. It does not rerun all 2,000 refits per model or independently audit raw API responses.
+## 1. Confidence reliability core (repository root)
 
-## Reconstruct selected outputs
+`verify_step2.py` checks 105 confidence intervals against stored bootstrap draws, seven weighted-versus-duplicated refit comparisons, within-fold separation and supplementary count accounting. It does not rerun all 2,000 refits per model or audit raw API responses.
 
-Run in a disposable checkout; these commands overwrite the corresponding results:
+To rebuild selected outputs, run these in a disposable checkout (they overwrite results):
 
 ```bash
-python reconstruct_supplements.py
-python reconstruct_transitions.py
+python reconstruct_supplements.py    # Tables S1–S9, S17, S18
+python reconstruct_transitions.py    # transition assignments and totals
+python refit_analysis.py             # slower stored-fold refit bootstrap
 python verify_step2.py
 ```
 
-These rebuild Tables S1–S9, S17, S18 and transition assignments/totals. S6 is copied from supplied transport output, not refitted. Other tables are retained exports; see ARCHIVED_STEP2_NOTES.md for their origins, historical rounding and interval differences.
+S6 is copied from the supplied transport output, not refitted. Other tables are retained exports; `ARCHIVED_STEP2_NOTES.md` documents their origins and historical rounding.
 
-For the slower complete stored-fold refit bootstrap:
+Primary confidence is the mean verbalized confidence over eligible returns, attached to the aggregated answer. It is not a posterior probability of that answer. Accuracy measures agreement with the benchmark key.
 
-```bash
-python refit_analysis.py
-python verify_step2.py
-```
+The transition reconstruction uses the original complete-case population. Its GPT-OSS-20B original-order rate is 41.0%. The audit-based exclusion analyses (36, 42 and 132 items) are reproduced by `pia-audit/`, not by this core.
+
+## 2. Permutation integrity audit (`pia-audit/`)
+
+This is an installable Python package with a command-line interface, tests and reproduction scripts; see `pia-audit/README.md`. `pia-audit/data/` holds the audit register of the article, item identifiers, permutation maps and the 10,000 model outputs of the presentation experiment. The reproduction scripts check their output against the published values (bootstrap seed 20260924).
+
+## 3. Expert review (`expert_review/`)
+
+This folder holds anonymized ratings from three pharmacists (150 permutations) and five physicians (101 questions; blinded answers, plus unblinded key-validity ratings from two physicians), together with a script that reproduces every expert-review number in the article. See `expert_review/README.md`. The web application used to collect the ratings is in `pia-audit/tools/review-webapp/`. Its question files are built locally from MedAraBench and are not committed.
 
 ## Scientific boundaries
 
-Inputs contain item identifiers, labels, correctness and confidence summaries, not original question text or patient records. Primary confidence is mean verbalized confidence over eligible returns, attached to the aggregated answer; it is not a posterior probability of that answer. Accuracy measures benchmark-key agreement.
+- Correctness means agreement with the benchmark key. The physician review indicates that the key is wrong for part of the questions on which all models disagreed with it (Section 4.7).
+- The audit and expert reviews are post hoc. There was no identical-prompt repeat control.
+- Checksums (`checksums.json`) document this package; they are not preregistration.
 
-The transition reconstruction uses the original complete-case population. It does **not** reproduce the later 36/42/132-item defect-exclusion sensitivity analyses. Its GPT-OSS-20B original-order comparison is 41.0%, not the later 40.4% after 42 exclusions. Do not substitute it for the final manuscript sensitivity result.
+## License
 
-The final numbered supplementary evidence, later audit code, complete raw traces, manuscript and figures are outside this core. No clinician review, external validation or identical-prompt repeat control is supplied. Transition accounting is an algebraic identity, not a demonstrated novel theorem. Stored-fold separation does not establish that benchmark content has no semantic duplicates.
+Code is released under the MIT License (`LICENSE`). Derived data and results files are released for research use with citation of the article. MedAraBench content remains under its own license and is not redistributed here.
 
-## Access and reuse
+## Citation
 
-Begin with a private repository. Redistribution rights for benchmark-derived data and author agreement on a code license remain to be confirmed. No open-source or third-party data license is granted by this package. Complete the checks in SUBMISSION_CHECKS.md before public release or journal submission.
-
-Checksums document this preparation, not prospective preregistration or independent provenance. A passing local check does not prove GitHub reviewer access or journal acceptance.
+See `CITATION.cff`.

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF1F3; --paper:#FFFFFF; --ink:#16242E; --muted:#5B6B76; --line:#D3DCE1;
+  --x:#0E6B6B; --x-soft:#E3F1F0; --y:#44519F; --y-soft:#E8EAF6;
+  --ok:#2C7150; --ok-soft:#E4F2EA; --warn:#9A5B0A; --warn-soft:#FBF0DF; --bad:#A33B32; --bad-soft:#F8E6E4;
+  --focus:#1F6FEB;
+  --font:'IBM Plex Sans Arabic','Noto Sans Arabic','Segoe UI',Tahoma,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.top{position:sticky;top:0;z-index:10;background:var(--ink);color:#fff}
+.top-in{max-width:1040px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:600;font-size:16px;flex:1}
+.brand small{display:block;font-weight:400;opacity:.7;font-size:13px;line-height:1.3}
+.chip{background:rgba(255,255,255,.12);border-radius:999px;padding:2px 12px;font-size:14px}
+.save{font-size:13px;min-width:110px;text-align:left;opacity:.9}
+.save.err{color:#FFB4AC;opacity:1}
+.bar{height:4px;background:rgba(255,255,255,.15)}
+.bar i{display:block;height:100%;width:0;background:#7FD1C7;transition:width .3s}
+
+main{max-width:1040px;margin:0 auto;padding:24px 20px 120px}
+h1{font-size:26px;line-height:1.35;margin:8px 0 6px;font-weight:700}
+h2{font-size:19px;margin:0 0 8px;font-weight:600}
+p{margin:0 0 12px}
+.lead{color:var(--muted);max-width:68ch}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin:16px 0}
+.btn{appearance:none;border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:10px 18px;cursor:pointer;font-weight:500}
+.btn:hover{border-color:#9FB0BA}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn.primary:disabled{opacity:.4;cursor:not-allowed}
+.btn.ghost{background:transparent}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.spacer{flex:1}
+.muted{color:var(--muted)}
+.small{font-size:14px}
+.err-box{background:var(--bad-soft);color:var(--bad);border-radius:8px;padding:10px 14px;margin:12px 0}
+input[type=text]{border:1px solid var(--line);border-radius:8px;padding:10px 14px;width:100%;max-width:340px;direction:ltr;text-align:left;letter-spacing:.04em}
+textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 14px;min-height:76px;resize:vertical;background:#FBFCFD}
+
+/* stage cards */
+.stages{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
+.stage{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.stage .meta{font-size:14px;color:var(--muted)}
+.stage .state{font-size:14px;font-weight:600}
+.stage.locked{opacity:.6}
+.meter{height:6px;border-radius:3px;background:#E3E9EC;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--x)}
+
+/* question */
+.qhead{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.qnum{font-size:15px;color:var(--muted)}
+.qid{font-size:13px;color:var(--muted);direction:ltr}
+.stem{font-size:19px;font-weight:600;line-height:1.75}
+.context{border-inline-start:3px solid var(--line);padding:4px 14px;margin:6px 0 18px}
+.context .lbl{font-size:13px;color:var(--muted);display:block}
+.context .stem{font-size:17px;font-weight:500}
+
+.compare{display:grid;grid-template-columns:1fr 64px 1fr;align-items:start;position:relative}
+.col h3{margin:0 0 8px;font-size:15px;font-weight:600;display:flex;align-items:center;gap:8px}
+.col.x h3{color:var(--x)} .col.y h3{color:var(--y)}
+.col h3 .sw{width:10px;height:10px;border-radius:2px;display:inline-block}
+.col.x .sw{background:var(--x)} .col.y .sw{background:var(--y)}
+.opts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:#fff;min-height:48px}
+.col.x .opt{border-inline-start:4px solid var(--x)}
+.col.y .opt{border-inline-start:4px solid var(--y)}
+.lab{flex:0 0 auto;width:28px;height:28px;border-radius:6px;display:grid;place-items:center;font-weight:700;font-size:15px;direction:ltr}
+.col.x .lab{background:var(--x-soft);color:var(--x)} .col.y .lab{background:var(--y-soft);color:var(--y)}
+.txt{flex:1;unicode-bidi:plaintext;text-align:right}
+.from{font-size:12px;color:var(--muted);white-space:nowrap;direction:ltr;align-self:center}
+svg.links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+svg.links path{fill:none;stroke:#9DAAB3;stroke-width:1.6}
+svg.links path.moved{stroke:#6E7E89;stroke-width:2}
+.opt.hl{box-shadow:0 0 0 2px #9DAAB3}
+
+.ask{margin:22px 0 10px;font-size:18px;font-weight:600}
+.choices{display:grid;gap:10px}
+.choices.three{grid-template-columns:repeat(3,1fr)}
+.choices.cols{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.choice{appearance:none;text-align:start;border:1.5px solid var(--line);background:#fff;border-radius:9px;padding:12px 14px;cursor:pointer;display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.choice .k{flex:0 0 auto;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 6px;margin-top:3px;direction:ltr}
+.choice .en{display:block;font-size:13px;color:var(--muted)}
+.choice:hover{border-color:#8FA2AD}
+.choice[aria-pressed=true]{border-color:var(--ink);background:#F2F5F7;box-shadow:inset 0 0 0 1px var(--ink)}
+.choice.c-ok[aria-pressed=true]{border-color:var(--ok);background:var(--ok-soft);box-shadow:inset 0 0 0 1px var(--ok)}
+.choice.c-warn[aria-pressed=true]{border-color:var(--warn);background:var(--warn-soft);box-shadow:inset 0 0 0 1px var(--warn)}
+.choice.c-mid[aria-pressed=true]{border-color:var(--muted);background:#F1F3F4}
+.choice .ol{flex:0 0 auto;font-weight:700;direction:ltr;min-width:22px}
+.sep{height:1px;background:var(--line);margin:8px 0}
+
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-inline-start:auto}
+.badge{font-size:12px;border-radius:999px;padding:1px 10px;white-space:nowrap;align-self:center}
+.badge.key{background:var(--ok-soft);color:var(--ok)}
+.badge.model{background:var(--warn-soft);color:var(--warn)}
+.badge.mine{background:var(--y-soft);color:var(--y)}
+.opt.plain{border-inline-start:1px solid var(--line)}
+
+.nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);border-top:1px solid var(--line);z-index:9}
+.nav-in{max-width:1040px;margin:0 auto;padding:10px 20px;display:flex;gap:10px;align-items:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;margin:12px 0}
+.cell{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 0;text-align:center;cursor:pointer;font-size:13px;direction:ltr}
+.cell.done{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cell.cur{outline:2px solid var(--focus)}
+.feedback{border-radius:8px;padding:12px 14px;margin-top:12px}
+.feedback.good{background:var(--ok-soft);color:var(--ok)}
+.feedback.bad{background:var(--bad-soft);color:var(--bad)}
+.ex{margin:10px 0;padding:0 0 0 0}
+.ex li{margin-bottom:6px}
+.check{display:flex;gap:10px;align-items:flex-start;margin:14px 0}
+.check input{width:20px;height:20px;margin-top:5px}
+
+@media (max-width:720px){
+  body{font-size:16px}
+  main{padding:16px 14px 130px}
+  .compare{grid-template-columns:1fr}
+  svg.links{display:none}
+  .col.y{margin-top:16px}
+  .choices.three{grid-template-columns:1fr}
+  .panel{padding:16px}
+  h1{font-size:22px}
+  .brand small{display:none}
+  .top-in{padding:8px 14px;gap:10px}
+  .nav-in{padding:8px 10px;gap:6px;flex-wrap:wrap}
+  .nav .btn{padding:8px 11px;font-size:15px}
+  .nav .spacer{display:none}
+  #navcount{display:none}
+}
+</style>
+</head>
+<body data-code="<?= code ?>">
+<div class="top">
+  <div class="top-in">
+    <div class="brand">مراجعة أسئلة المعيار الطبي العربي<small>Arabic medical benchmark – independent review</small></div>
+    <span class="chip" id="who" hidden></span>
+    <span class="save" id="save" aria-live="polite"></span>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+</div>
+<main id="app"><p class="muted">جارٍ التحميل…</p></main>
+<div class="nav" id="nav" hidden><div class="nav-in" id="navin"></div></div>
+
+<script>
+/* ---------------- server bridge ---------------- */
+function call(fn){
+  var args = Array.prototype.slice.call(arguments,1);
+  return new Promise(function(res,rej){
+    var r = google.script.run.withSuccessHandler(res).withFailureHandler(function(e){rej(e)});
+    r[fn].apply(r,args);
+  });
+}
+var MSG = {
+  BAD_CODE:'رمز الدخول غير صحيح. تحقّق من الرابط أو الرمز الذي أرسله المنسّق.',
+  B2_LOCKED:'يُفتح هذا الجزء بعد إرسال إجابات B1.',
+  ALREADY_SUBMITTED:'تم إرسال هذا الجزء مسبقاً ولا يمكن تعديله.',
+  WRONG_STAGE:'هذا الجزء غير مخصّص لرمزك.'
+};
+function errText(e){ var m=(e&&e.message)||String(e); for(var k in MSG) if(m.indexOf(k)>=0) return MSG[k]; return 'حدث خطأ في الاتصال. حاول مرة أخرى. ('+m+')'; }
+
+/* ---------------- state ---------------- */
+var S = { code:'', info:null, stage:null, items:[], answers:{}, idx:0, submitted:false, failed:[], showGrid:false };
+var app = document.getElementById('app');
+var nav = document.getElementById('nav'), navin = document.getElementById('navin');
+function el(tag, attrs, kids){
+  var n=document.createElement(tag);
+  if(attrs) for(var k in attrs){ var v=attrs[k];
+    if(k==='class') n.className=v; else if(k==='text') n.textContent=v; else if(k.slice(0,2)==='on') n.addEventListener(k.slice(2),v);
+    else if(v!==false && v!=null) n.setAttribute(k, v===true?'':v); }
+  (kids||[]).forEach(function(c){ if(c==null) return; n.appendChild(typeof c==='string'?document.createTextNode(c):c); });
+  return n;
+}
+function clear(){ app.innerHTML=''; nav.hidden=true; navin.innerHTML=''; setBar(null); window.scrollTo(0,0); }
+function setBar(p){ document.getElementById('bar').style.width = p==null?'0':(Math.round(p*100)+'%'); }
+function setSave(state){
+  var s=document.getElementById('save');
+  s.className='save'+(state==='error'?' err':'');
+  s.textContent = state==='saving'?'جارٍ الحفظ…': state==='saved'?'تم الحفظ ✓': state==='error'?'تعذّر الحفظ':'';
+}
+
+/* ---------------- saving (sequential queue with retry) ---------------- */
+var chain = Promise.resolve();
+function save(field, value){
+  var it=S.items[S.idx], id=it.id, stage=S.stage;
+  S.answers[id]=S.answers[id]||{}; S.answers[id][field]=value;
+  setSave('saving');
+  chain = chain.then(function(){ return call('api_save', S.code, stage, id, field, value); })
+    .then(function(){ if(!S.failed.length) setSave('saved'); })
+    .catch(function(e){ S.failed.push([stage,id,field,value]); setSave('error'); showRetry(errText(e)); });
+}
+function showRetry(msg){
+  var box=document.getElementById('retrybox'); if(box) box.remove();
+  box=el('div',{class:'err-box',id:'retrybox'},[msg+' ',
+    el('button',{class:'btn',onclick:function(){ var f=S.failed.splice(0); box.remove(); f.forEach(function(x){
+      setSave('saving'); chain=chain.then(function(){return call('api_save',S.code,x[0],x[1],x[2],x[3]);})
+      .then(function(){ if(!S.failed.length) setSave('saved'); })
+      .catch(function(e){ S.failed.push(x); setSave('error'); showRetry(errText(e)); }); }); }},['إعادة المحاولة'])]);
+  app.insertBefore(box, app.firstChild);
+}
+window.addEventListener('beforeunload', function(e){ if(S.failed.length){ e.preventDefault(); e.returnValue=''; } });
+
+/* ---------------- login ---------------- */
+function viewLogin(msg){
+  clear();
+  var inp=el('input',{type:'text',id:'code',placeholder:'P1-XXXXXX',autocomplete:'off','aria-label':'رمز الدخول'});
+  var go=function(){ start(inp.value); };
+  inp.addEventListener('keydown',function(e){ if(e.key==='Enter') go(); });
+  app.appendChild(el('div',{class:'panel'},[
+    el('h1',{text:'أهلاً بك'}),
+    el('p',{class:'lead',text:'أدخل رمز الدخول الذي أرسله إليك المنسّق. إجاباتك تُحفظ تلقائياً، ويمكنك التوقف والعودة في أي وقت باستخدام الرابط نفسه.'}),
+    msg? el('div',{class:'err-box',text:msg}) : null,
+    el('div',{class:'row'},[inp, el('button',{class:'btn primary',onclick:go},['دخول'])])
+  ]));
+  inp.focus();
+}
+function start(code){
+  code=String(code||'').trim(); if(!code) return viewLogin();
+  app.innerHTML='<p class="muted">جارٍ التحقق من الرمز…</p>';
+  call('api_start', code).then(function(info){
+    S.code=code; S.info=info;
+    var w=document.getElementById('who'); w.hidden=false; w.textContent=info.rater;
+    viewHome();
+  }).catch(function(e){ viewLogin(errText(e)); });
+}
+
+/* ---------------- home ---------------- */
+var STAGE_META = {
+  A:{title:'الجزء A: مقارنة ترتيب الخيارات', desc:'تحكم لكل سؤال: هل بقي المعنى والإجابة الصحيحة نفسيهما بعد تغيير ترتيب الخيارات؟ لا يُطلب حل السؤال الطبي.'},
+  B1:{title:'الجزء B1: الإجابة المستقلة', desc:'تجيب عن كل سؤال طبي من معرفتك، دون رؤية مفتاح الإجابة.'},
+  B2:{title:'الجزء B2: تقييم المفتاح وخطورة الخطأ', desc:'ترى مفتاح الإجابة وإجابة نموذج الذكاء الاصطناعي، وتقيّم صحة المفتاح وخطورة خطأ النموذج.'}
+};
+function viewHome(){
+  clear();
+  var info=S.info, role=info.role;
+  app.appendChild(el('h1',{text: role==='A'?'مراجعة ترتيب الخيارات':'مراجعة الأسئلة ومفتاح الإجابة'}));
+  app.appendChild(el('p',{class:'lead',text: role==='A'
+    ? 'ستعرض لك كل شاشة سؤالاً طبياً بترتيبين للخيارات (X و Y). مهمتك الحكم على بقاء المعنى، لا حلّ السؤال. يبدأ العمل بتدريب قصير من ثلاثة أمثلة.'
+    : 'يتكوّن العمل من مرحلتين: B1 ثم B2. لن يُفتح B2 إلا بعد إرسال B1، حفاظاً على استقلالية إجاباتك.'}));
+  var box=el('div',{class:'stages'});
+  Object.keys(info.stages).forEach(function(s){
+    var st=info.stages[s], m=STAGE_META[s];
+    var needTraining = !info.trained;
+    var label = st.locked ? 'مقفل حتى إرسال B1' : st.submitted ? 'تم الإرسال ✓' : (st.answered? 'متابعة' : 'ابدأ');
+    var btn = el('button',{class:'btn primary', disabled: st.locked || false, onclick:function(){
+      if(needTraining) return role==='A'? viewTrainingA(0) : viewInstructionsB();
+      openStage(s); }}, [st.submitted?'عرض الإجابات':label]);
+    box.appendChild(el('div',{class:'stage'+(st.locked?' locked':'')},[
+      el('h2',{text:m.title}), el('div',{class:'meta',text:m.desc}),
+      el('div',{class:'meter'},[el('i',{style:'width:'+Math.round(100*st.answered/st.total)+'%'})]),
+      el('div',{class:'state',text: st.answered+' من '+st.total+(st.submitted?' – أُرسل':'')}),
+      el('div',{class:'row'},[btn])
+    ]));
+  });
+  app.appendChild(box);
+}
+
+/* ---------------- training (Part A) ---------------- */
+var TRAIN = [
+  {q:'أي مما يلي هرمون تفرزه الغدة النخامية الأمامية؟',
+   x:'A. الإنسولين\nB. هرمون النمو\nC. الغلوكاغون\nD. الألدوستيرون',
+   y:'A. الألدوستيرون\nB. الإنسولين\nC. هرمون النمو\nD. الغلوكاغون', ans:'PRESERVED',
+   why:'الخيارات الأربعة نفسها موجودة في الترتيبين، وتغيّر الحرف فقط. الإجابة الصحيحة (هرمون النمو) ما زالت موجودة بالمحتوى نفسه، فالمعنى لم يتغيّر.'},
+  {q:'أي مما يلي من الفيتامينات الذائبة في الدهون؟',
+   x:'A. فيتامين د\nB. فيتامين ك\nC. فيتامين ج\nD. A+B',
+   y:'A. فيتامين ج\nB. فيتامين د\nC. فيتامين ك\nD. A+B', ans:'CHANGED',
+   why:'في الترتيب X يعني الخيار «A+B» فيتامين د + فيتامين ك (صحيح). في الترتيب Y صار «A+B» يعني فيتامين ج + فيتامين د (خاطئ). النص بقي كما هو لكن معناه تغيّر، فتغيّرت الإجابة الصحيحة.'},
+  {q:'من أعراض قصور الغدة الدرقية:',
+   x:'A. زيادة الوزن\nB. عدم تحمّل البرد\nC. الإمساك\nD. كل ما سبق',
+   y:'A. كل ما سبق\nB. الإمساك\nC. زيادة الوزن\nD. عدم تحمّل البرد', ans:'CHANGED',
+   why:'«كل ما سبق» في الترتيب X يشمل الخيارات الثلاثة التي قبله. في الترتيب Y صار أول خيار، فلا يسبقه شيء، ولم يعد يعني الشيء نفسه.'}
+];
+function viewTrainingA(i){
+  clear(); var ex=TRAIN[i], chosen=null;
+  app.appendChild(el('h1',{text:'تدريب: المثال '+(i+1)+' من '+TRAIN.length}));
+  app.appendChild(el('p',{class:'lead',text:'هذه أمثلة للتدريب فقط، وليست من أسئلة الدراسة. اختر الإجابة المناسبة لتنتقل.'}));
+  var panel=el('div',{class:'panel'}); app.appendChild(panel);
+  renderCompare(panel, ex);
+  panel.appendChild(el('div',{class:'ask',text:'هل يحمل الترتيبان X و Y المعنى نفسه والإجابة الصحيحة نفسها؟'}));
+  var fb=el('div'); var next=el('button',{class:'btn primary',disabled:true,onclick:function(){
+    if(i+1<TRAIN.length) viewTrainingA(i+1); else call('api_training',S.code).then(function(){ S.info.trained=true; openStage('A'); }).catch(function(e){ showRetry(errText(e)); }); }},[i+1<TRAIN.length?'المثال التالي':'ابدأ الأسئلة']);
+  panel.appendChild(choicesA(function(v){ chosen=v;
+    var good = v===ex.ans; fb.className='feedback '+(good?'good':'bad');
+    fb.textContent=(good?'إجابة صحيحة. ':'ليست الإجابة المتوقعة. ')+ex.why; next.disabled=!good; }, null));
+  panel.appendChild(fb); panel.appendChild(el('div',{class:'row',style:'margin-top:14px'},[next]));
+}
+
+/* ---------------- instructions (Part B) ---------------- */
+function viewInstructionsB(){
+  clear();
+  var ok=el('input',{type:'checkbox',id:'ok'}), go=el('button',{class:'btn primary',disabled:true,onclick:function(){
+    call('api_training',S.code).then(function(){ S.info.trained=true; openStage('B1'); }).catch(function(e){ showRetry(errText(e)); }); }},['ابدأ الجزء B1']);
+  ok.addEventListener('change',function(){ go.disabled=!ok.checked; });
+  app.appendChild(el('div',{class:'panel'},[
+    el('h1',{text:'قبل أن تبدأ'}),
+    el('ol',{class:'ex'},[
+      el('li',{text:'في الجزء B1 أجب عن كل سؤال من معرفتك الطبية فقط، دون أي مرجع خارجي أو بحث على الإنترنت.'}),
+      el('li',{text:'إذا كانت هناك أكثر من إجابة مقبولة، أو لا توجد إجابة صحيحة، أو كان السؤال خارج اختصاصك، فاختر الخيار المناسب في أسفل القائمة.'}),
+      el('li',{text:'لا تناقش الأسئلة مع المقيّم الآخر قبل انتهاء الطرفين.'}),
+      el('li',{text:'بعد إرسال B1 يُفتح الجزء B2، وفيه ترى مفتاح الإجابة وإجابة نموذج ذكاء اصطناعي لتقييمهما. لا يمكن تعديل B1 بعد إرساله.'}),
+      el('li',{text:'تُحفظ كل إجابة تلقائياً، ويمكنك التوقف والعودة لاحقاً بالرابط نفسه.'})
+    ]),
+    el('label',{class:'check'},[ok, el('span',{text:'قرأت التعليمات وفهمتها.'})]),
+    go
+  ]));
+}
+
+/* ---------------- stage loading ---------------- */
+function openStage(stage){
+  clear(); app.innerHTML='<p class="muted">جارٍ تحميل الأسئلة…</p>';
+  call('api_items', S.code, stage).then(function(r){
+    S.stage=stage; S.items=r.items; S.answers=r.answers||{}; S.submitted=r.submitted;
+    var first=S.items.findIndex(function(it){ return !complete(it.id); });
+    S.idx = first<0 ? 0 : first;
+    if(first<0 && !S.submitted) return viewReview();
+    viewQuestion();
+  }).catch(function(e){ clear(); app.appendChild(el('div',{class:'err-box',text:errText(e)})); app.appendChild(el('button',{class:'btn',onclick:viewHome},['العودة'])); });
+}
+var REQ = {A:['equivalence'],B1:['answer'],B2:['key_validity','severity']};
+function complete(id){ var a=S.answers[id]; return !!a && REQ[S.stage].every(function(f){return a[f];}); }
+function doneCount(){ return S.items.filter(function(it){return complete(it.id);}).length; }
+
+/* ---------------- options parsing and comparison ---------------- */
+function parseOpts(s){
+  return String(s).split('\n').map(function(line){
+    var m=line.match(/^\s*([A-F])[\.\)]\s*(.*)$/); return m?{k:m[1],t:m[2].trim()}:{k:'',t:line.trim()};
+  }).filter(function(o){return o.t||o.k;});
+}
+function norm(t){ return t.replace(/\s+/g,' ').replace(/[\u064B-\u0652\u0640]/g,'').trim(); }
+function renderCompare(parent, it){
+  parent.appendChild(el('div',{class:'context'},[el('span',{class:'lbl',text:'السؤال الطبي (للاطلاع فقط – لا تُجب عنه)'}), el('div',{class:'stem',text:it.q})]));
+  var X=parseOpts(it.x), Y=parseOpts(it.y);
+  var countX={}; X.forEach(function(o){ var n=norm(o.t); countX[n]=(countX[n]||0)+1; });
+  var wrap=el('div',{class:'compare'});
+  var colX=el('div',{class:'col x'},[el('h3',{},[el('span',{class:'sw'}),'الترتيب X'])]);
+  var colY=el('div',{class:'col y'},[el('h3',{},[el('span',{class:'sw'}),'الترتيب Y'])]);
+  var ulX=el('ol',{class:'opts'}), ulY=el('ol',{class:'opts'});
+  X.forEach(function(o,i){ ulX.appendChild(el('li',{class:'opt','data-i':i},[el('span',{class:'lab',text:o.k}),el('span',{class:'txt',dir:'auto',text:o.t})])); });
+  var pairs=[];
+  Y.forEach(function(o,j){
+    var n=norm(o.t), i=-1;
+    if(countX[n]===1) i=X.findIndex(function(x){return norm(x.t)===n;});
+    if(i>=0) pairs.push([i,j]);
+    ulY.appendChild(el('li',{class:'opt','data-j':j},[el('span',{class:'lab',text:o.k}),el('span',{class:'txt',dir:'auto',text:o.t}),
+      i>=0? el('span',{class:'from',text:'= X·'+X[i].k}) : null]));
+  });
+  colX.appendChild(ulX); colY.appendChild(ulY);
+  var svg=document.createElementNS('http://www.w3.org/2000/svg','svg'); svg.setAttribute('class','links'); svg.setAttribute('aria-hidden','true');
+  wrap.appendChild(colX); wrap.appendChild(el('div')); wrap.appendChild(colY); wrap.appendChild(svg);
+  parent.appendChild(wrap);
+  function draw(){
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    var wb=wrap.getBoundingClientRect(); if(getComputedStyle(svg).display==='none') return;
+    pairs.forEach(function(p){
+      var a=ulX.children[p[0]].getBoundingClientRect(), b=ulY.children[p[1]].getBoundingClientRect();
+      var x1=a.left-wb.left, y1=a.top+a.height/2-wb.top, x2=b.right-wb.left, y2=b.top+b.height/2-wb.top;
+      var mx=(x1+x2)/2, path=document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d','M'+x1+','+y1+' C'+mx+','+y1+' '+mx+','+y2+' '+x2+','+y2);
+      if(X[p[0]].k!==Y[p[1]].k) path.setAttribute('class','moved');
+      svg.appendChild(path);
+    });
+  }
+  requestAnimationFrame(draw); window.onresize=draw;
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+}
+
+/* ---------------- choice widgets ---------------- */
+function choiceBtn(key, ar, en, cls, pressed, onPick){
+  var b=el('button',{class:'choice '+(cls||''),'aria-pressed':pressed?'true':'false',onclick:function(){
+    Array.prototype.forEach.call(b.parentNode.querySelectorAll('.choice'),function(x){x.setAttribute('aria-pressed','false');});
+    b.setAttribute('aria-pressed','true'); onPick(); }},[
+    key? el('span',{class:'k',text:key}):null, el('span',{},[ar, en? el('span',{class:'en',text:en}):null])]);
+  return b;
+}
+function choicesA(onPick, current){
+  var box=el('div',{class:'choices three'});
+  [['PRESERVED','نعم، المعنى نفسه','Same meaning','c-ok'],['CHANGED','لا، تغيّر المعنى أو الإجابة الصحيحة','Meaning changed','c-warn'],['UNCERTAIN','غير متأكد','Uncertain','c-mid']]
+  .forEach(function(c,i){ box.appendChild(choiceBtn(String(i+1),c[1],c[2],c[3],current===c[0],function(){onPick(c[0]);})); });
+  return box;
+}
+
+/* ---------------- question view ---------------- */
+function viewQuestion(){
+  clear();
+  var it=S.items[S.idx], a=S.answers[it.id]||{}, ro=S.submitted;
+  setBar(doneCount()/S.items.length);
+  app.appendChild(el('div',{class:'qhead'},[
+    el('span',{class:'qnum',text:'السؤال '+(S.idx+1)+' من '+S.items.length}),
+    el('span',{class:'qid',text:it.id}), el('span',{class:'spacer'}),
+    ro? el('span',{class:'small muted',text:'تم الإرسال – للعرض فقط'}) : null]));
+  var panel=el('div',{class:'panel'}); app.appendChild(panel);
+
+  if(S.stage==='A'){
+    renderCompare(panel, it);
+    panel.appendChild(el('div',{class:'ask',text:'هل يحمل الترتيبان X و Y المعنى نفسه والإجابة الصحيحة نفسها؟'}));
+    panel.appendChild(el('p',{class:'small muted',text:'تغيّر الحرف وحده ليس تغييراً في المعنى.'}));
+    var ta=reasonBox('reason', a.reason, 'سبب مختصر (مطلوب عند اختيار «تغيّر المعنى» أو «غير متأكد»)');
+    panel.appendChild(choicesA(function(v){ if(ro) return; save('equivalence',v); refreshNav(); if(v!=='PRESERVED') ta.focus(); }, a.equivalence));
+    panel.appendChild(el('div',{style:'margin-top:14px'},[ta]));
+  } else if(S.stage==='B1'){
+    panel.appendChild(el('div',{class:'stem',text:it.q}));
+    panel.appendChild(el('div',{class:'ask',text:'اختر الإجابة الصحيحة من معرفتك الطبية:'}));
+    var box=el('div',{class:'choices'});
+    it.opts.forEach(function(o){ box.appendChild(optBtn(o, a.answer===o[0], function(){ if(!ro){ save('answer',o[0]); refreshNav(); } })); });
+    box.appendChild(el('div',{class:'sep'}));
+    [['MULTIPLE','أكثر من إجابة صحيحة','More than one defensible answer'],['NONE','لا توجد إجابة صحيحة بين الخيارات','No option is correct'],['CANNOT_JUDGE','لا أستطيع الحكم / خارج اختصاصي','Cannot judge']]
+      .forEach(function(c){ box.appendChild(choiceBtn('',c[1],c[2],'c-mid',a.answer===c[0],function(){ if(!ro){ save('answer',c[0]); refreshNav(); } })); });
+    panel.appendChild(box);
+    panel.appendChild(el('div',{style:'margin-top:14px'},[reasonBox('comment', a.comment, 'ملاحظة (اختياري)')]));
+  } else {
+    panel.appendChild(el('div',{class:'stem',text:it.q}));
+    var list=el('ol',{class:'opts',style:'margin-top:12px'});
+    it.opts.forEach(function(o){
+      var bs=el('span',{class:'badges'},[
+        o[0]===it.key? el('span',{class:'badge key',text:'مفتاح المعيار'}):null,
+        o[0]===it.model? el('span',{class:'badge model',text:'إجابة النموذج'}):null,
+        o[0]===it.blind? el('span',{class:'badge mine',text:'إجابتك في B1'}):null]);
+      list.appendChild(el('li',{class:'opt plain'},[el('span',{class:'lab',style:'background:#EEF1F3',text:o[0]}),el('span',{class:'txt',dir:'auto',text:o[1]}),bs]));
+    });
+    panel.appendChild(list);
+    if(it.blind && it.blind.length>1) panel.appendChild(el('p',{class:'small muted',style:'margin-top:8px',text:'إجابتك في B1: '+({MULTIPLE:'أكثر من إجابة صحيحة',NONE:'لا توجد إجابة صحيحة',CANNOT_JUDGE:'لا أستطيع الحكم'}[it.blind]||it.blind)}));
+    panel.appendChild(el('div',{class:'ask',text:'١. هل مفتاح الإجابة في المعيار صحيح؟'}));
+    var k=el('div',{class:'choices cols'});
+    [['KEY_CORRECT','المفتاح صحيح','Key correct','c-ok'],['KEY_INCORRECT','المفتاح خاطئ','Key incorrect','c-warn'],['MULTIPLE','أكثر من إجابة مقبولة','Multiple defensible answers','c-mid'],['FLAWED','السؤال غامض أو معيب','Question ambiguous or flawed','c-mid'],['CANNOT_JUDGE','لا أستطيع الحكم','Cannot judge','c-mid']]
+      .forEach(function(c){ k.appendChild(choiceBtn('',c[1],c[2],c[3],a.key_validity===c[0],function(){ if(!ro){ save('key_validity',c[0]); refreshNav(); } })); });
+    panel.appendChild(k);
+    panel.appendChild(el('div',{class:'ask',text:'٢. لو اعتمد متعلّم أو ممارس على إجابة النموذج، ما خطورة ذلك؟'}));
+    var sv=el('div',{class:'choices cols'});
+    [['ACCEPTABLE','إجابة النموذج مقبولة طبياً','Model answer acceptable','c-ok'],['MINOR','خطأ بسيط دون أثر يُذكر','Minor error','c-mid'],['MODERATE','خطأ متوسط قد يضلّل المتعلم أو الممارس','Moderate error','c-warn'],['HARMFUL','خطأ قد يسبب ضرراً للمريض إذا طُبّق','Potentially harmful','c-warn'],['NA','لا ينطبق: علوم أساسية دون أثر سريري مباشر','Not applicable','c-mid']]
+      .forEach(function(c){ sv.appendChild(choiceBtn('',c[1],c[2],c[3],a.severity===c[0],function(){ if(!ro){ save('severity',c[0]); refreshNav(); } })); });
+    panel.appendChild(sv);
+    panel.appendChild(el('div',{style:'margin-top:14px'},[reasonBox('reason', a.reason, 'السبب أو المصدر (اختياري، ومهم إذا رأيت أن المفتاح خاطئ)')]));
+  }
+  if(ro) Array.prototype.forEach.call(panel.querySelectorAll('button,textarea'),function(b){ b.disabled=true; });
+  if(S.showGrid) app.appendChild(gridView());
+  buildNav();
+}
+function optBtn(o, pressed, onPick){
+  var b=el('button',{class:'choice','aria-pressed':pressed?'true':'false',onclick:function(){
+    Array.prototype.forEach.call(b.parentNode.querySelectorAll('.choice'),function(x){x.setAttribute('aria-pressed','false');});
+    b.setAttribute('aria-pressed','true'); onPick(); }},[el('span',{class:'ol',text:o[0]}), el('span',{class:'txt',dir:'auto',text:o[1]})]);
+  return b;
+}
+function reasonBox(field, val, ph){
+  var t=el('textarea',{placeholder:ph,'aria-label':ph}); t.value=val||''; var tm=null;
+  t.addEventListener('input',function(){ clearTimeout(tm); tm=setTimeout(function(){ save(field,t.value); },900); });
+  t.addEventListener('blur',function(){ clearTimeout(tm); if((S.answers[S.items[S.idx].id]||{})[field]!==t.value && (t.value||(S.answers[S.items[S.idx].id]||{})[field])) save(field,t.value); });
+  return t;
+}
+function gridView(){
+  var g=el('div',{class:'panel'},[el('h2',{text:'قائمة الأسئلة'}),el('p',{class:'small muted',text:'المربعات الداكنة أُجيب عنها. اضغط على أي رقم للانتقال إليه.'})]);
+  var grid=el('div',{class:'grid'});
+  S.items.forEach(function(it,i){ grid.appendChild(el('button',{class:'cell'+(complete(it.id)?' done':'')+(i===S.idx?' cur':''),onclick:function(){ S.idx=i; viewQuestion(); }},[String(i+1)])); });
+  g.appendChild(grid); return g;
+}
+function buildNav(){
+  nav.hidden=false; navin.innerHTML='';
+  navin.appendChild(el('button',{class:'btn',disabled:S.idx===0,onclick:function(){ S.idx--; viewQuestion(); }},['السابق']));
+  navin.appendChild(el('button',{class:'btn primary',id:'nextbtn',onclick:next},[S.idx===S.items.length-1?'المراجعة والإرسال':'التالي']));
+  navin.appendChild(el('span',{class:'spacer'}));
+  navin.appendChild(el('span',{class:'small muted',id:'navcount',text:doneCount()+' / '+S.items.length}));
+  navin.appendChild(el('button',{class:'btn ghost',onclick:function(){ S.showGrid=!S.showGrid; viewQuestion(); }},[S.showGrid?'إخفاء القائمة':'قائمة الأسئلة']));
+  navin.appendChild(el('button',{class:'btn ghost',onclick:function(){ chain.then(viewHome); }},['الرئيسية']));
+}
+function refreshNav(){ var c=document.getElementById('navcount'); if(c) c.textContent=doneCount()+' / '+S.items.length; setBar(doneCount()/S.items.length); }
+function next(){ if(S.idx<S.items.length-1){ S.idx++; viewQuestion(); } else viewReview(); }
+document.addEventListener('keydown',function(e){
+  if(e.target.tagName==='TEXTAREA'||e.target.tagName==='INPUT'||S.stage!=='A'||!S.items.length||nav.hidden) return;
+  if(['1','2','3'].indexOf(e.key)>=0){ var b=app.querySelectorAll('.choices.three .choice')[+e.key-1]; if(b) b.click(); }
+});
+
+/* ---------------- review and submit ---------------- */
+function viewReview(){
+  clear();
+  var missing=S.items.map(function(it,i){return complete(it.id)?null:i;}).filter(function(x){return x!==null;});
+  setBar(doneCount()/S.items.length);
+  var p=el('div',{class:'panel'},[el('h1',{text:'المراجعة قبل الإرسال'}),
+    el('p',{class:'lead',text:'أجبت عن '+doneCount()+' من '+S.items.length+' سؤالاً.'+(missing.length?' يجب الإجابة عن الأسئلة المتبقية قبل الإرسال:':' يمكنك الآن الإرسال. بعد الإرسال لا يمكن تعديل الإجابات.')})]);
+  if(missing.length){ var g=el('div',{class:'grid'}); missing.forEach(function(i){ g.appendChild(el('button',{class:'cell',onclick:function(){S.idx=i;viewQuestion();}},[String(i+1)])); }); p.appendChild(g); }
+  var msg=el('div');
+  var sub=el('button',{class:'btn primary',disabled:missing.length>0||S.submitted,onclick:function(){
+    if(!confirm('هل أنت متأكد من الإرسال؟ لن تتمكن من تعديل إجاباتك بعده.')) return;
+    sub.disabled=true; msg.innerHTML='<p class="muted">جارٍ الإرسال…</p>';
+    chain.then(function(){ if(S.failed.length) throw new Error('توجد إجابات لم تُحفظ بعد. اضغط «إعادة المحاولة» أولاً.'); return call('api_submit',S.code,S.stage); })
+    .then(function(r){ if(r.ok) return viewDone(); msg.textContent='ما زالت هناك أسئلة بلا إجابة على الخادم: '+r.missing.length; sub.disabled=false; })
+    .catch(function(e){ msg.className='err-box'; msg.textContent=errText(e); sub.disabled=false; });
+  }},[S.submitted?'تم الإرسال':'إرسال '+(S.stage==='A'?'الجزء A':'الجزء '+S.stage)]);
+  p.appendChild(el('div',{class:'row'},[el('button',{class:'btn',onclick:function(){ S.idx=missing.length?missing[0]:0; viewQuestion(); }},['العودة إلى الأسئلة']), sub]));
+  p.appendChild(msg); app.appendChild(p);
+}
+function viewDone(){
+  clear();
+  var st=S.stage, extra = st==='B1'? 'تم فتح الجزء B2 الآن. يمكنك البدء فيه مباشرة أو لاحقاً بالرابط نفسه.' : 'شكراً جزيلاً لمساهمتك. يمكنك إغلاق الصفحة.';
+  app.appendChild(el('div',{class:'panel'},[el('h1',{text:'تم الإرسال بنجاح'}), el('p',{class:'lead',text:extra}),
+    el('button',{class:'btn primary',onclick:function(){ start(S.code); }},['العودة إلى الصفحة الرئيسية'])]));
+}
+
+/* ---------------- boot ---------------- */
+(function(){
+  var c=document.body.getAttribute('data-code');
+  if(c && c.indexOf('<?')<0) start(c); else viewLogin();
+})();
+</script>
+</body>
+</html>

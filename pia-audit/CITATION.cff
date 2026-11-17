@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: "pia-audit: permutation integrity auditing for multiple-choice LLM benchmarks"
+version: 0.1.0
+repository-code: "https://github.com/Myssar/arabic-medical-qa-reproducibility"
+license: MIT
+authors:
+  - family-names: Al-Battbootti
+    given-names: Myssar
+  - family-names: Alkadhmawee
+    given-names: Ahmed Adil
+  - family-names: Marin
+    given-names: Iuliana
+preferred-citation:
+  type: article
+  title: "Permutation integrity auditing for reliability evaluation of large language models: confidence, calibration and answer stability in Arabic medical question answering"
+  authors:
+    - family-names: Al-Battbootti
+      given-names: Myssar
+    - family-names: Alkadhmawee
+      given-names: Ahmed Adil
+    - family-names: Aledan
+      given-names: Hayder
+    - family-names: Jasim
+      given-names: Zahraa Mahmood
+    - family-names: Marin
+      given-names: Iuliana
+  journal: "Artificial Intelligence in Medicine"
+  status: submitted

@@ -4,3 +4,8 @@ __pycache__/
 .env.*
 verification.json
 *.log
+
+# review web app files built from MedAraBench (never commit)
+dataA.gs
+dataB.gs
+partB_key.csv
