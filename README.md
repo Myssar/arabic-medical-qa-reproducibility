@@ -71,6 +71,16 @@ This folder holds anonymized ratings from three pharmacists (150 permutations) a
 - The audit and expert reviews are post hoc. There was no identical-prompt repeat control.
 - Checksums (`checksums.json`) document this package; they are not preregistration.
 
+## Use of AI assistants
+
+The authors used AI assistants during this work, as declared in the article (Section 3.11 and the declaration of generative AI use):
+
+- OpenAI ChatGPT and Anthropic Claude assisted with code review, computational auditing and exploratory reanalysis of archived outputs. This covers the perturbation specificity intervals, the displayed-letter analysis, Table 6 and the scoring of expert ratings. They also assisted with preparing documentation in this repository.
+- Anthropic Claude drafted the English reading aid shown to physicians in the expert review (`expert_review/`). The Arabic question text remained authoritative.
+- OpenAI ChatGPT and Anthropic Claude were used for language editing of the manuscript, and Consensus and SciSpace for literature discovery.
+
+All computations were reproduced from the archived files, and the authors verified and approved all code, analyses and interpretations. The large language models listed in the data files (for example `openai/gpt-oss-120b` or Claude Sonnet) are the systems evaluated in the study, not tools used to produce it.
+
 ## License
 
 Code is released under the MIT License (`LICENSE`). Derived data and results files are released for research use with citation of the article. MedAraBench content remains under its own license and is not redistributed here.
